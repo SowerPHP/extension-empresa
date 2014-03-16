@@ -1,5 +1,5 @@
-Extensión: empresa
-==================
+Extensión: empresa (Chile)
+==========================
 
 Extensión con funcionalidades para empresas (diseñada para empresas chilenas).
 

@@ -1,10 +1,10 @@
 {
 	"name": "sowerphp/empresa",
-	"description": "Extensión: empresa",
+	"description": "Extensión: empresa (Chile)",
 	"type": "library",
 	"keywords": ["sowerphp", "extension"],
 	"homepage": "http://sowerphp.org",
-	"license": "GPL",
+	"license": "GPL-3.0+",
 	"authors": [
 		{
 			"name": "Equipo de SowerPHP",
