@@ -1,7 +1,7 @@
 Extensión: empresa
 ==================
 
-Extensión con funcionalidades para empresas.
+Extensión con funcionalidades para empresas (diseñada para empresas chilenas).
 
 La extensión requiere que previamente se haya cargado la extensión app y
 general, ya eue son utilizadas por esta. Por lo cual verificar que el archivo
