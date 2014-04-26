@@ -8,5 +8,5 @@ general, ya que son utilizadas por esta. Por lo cual verificar que el archivo
 *webroot/index.php* al menos contenga en la definición de extensiones:
 
 	$_EXTENSIONS = array(
-            'SowerPHP/empresa', 'SowerPHP/app', 'SowerPHP/general'
+            'sowerphp/empresa', 'sowerphp/app', 'sowerphp/general'
         );
