@@ -29,8 +29,9 @@
 
 // Módulos utilizados por la extensión
 Module::uses(array(
-	'Rrhh',
-	'Sistema.Empresa',
-	'Sistema.General',
-	'Sistema.General.DivisionGeopolitica',
+    'Rrhh',
+    'Sistema.Empresa',
+    'Sistema.Enlaces' => ['autoLoad'=>true],
+    'Sistema.General',
+    'Sistema.General.DivisionGeopolitica',
 ));
