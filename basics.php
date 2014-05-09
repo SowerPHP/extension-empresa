@@ -33,21 +33,22 @@
  * @param quitarDV Si es true el digito verificador se quita, sino se mantiene
  * @return Rut formateado
  * @author DeLaF, esteban[at]delaf.cl
- * @version 2014-04-21
+ * @version 2014-05-08
  */
 function rut ($rut, $quitarDV = true)
 {
-    $rutNew = '';
+    $rut = str_replace(['.', ','], '', $rut);
     if (strpos($rut, '-')) {
-        $aux = explode('-', $rut); // aux porque estamos con Strict Mode
-        if($quitarDV) $rutNew = array_shift($aux);
-        else $rutNew = str_replace('-', '', $rut);
-        $rutNew = str_replace('.', '', $rutNew);
-        $rutNew = str_replace(',', '', $rutNew);
+        if($quitarDV) {
+            $aux = explode('-', $rut);
+            return (int)array_shift($aux);
+        }
+        return (int)str_replace('-', '', $rut);
     } else {
-        $flag = false; // para controlar ceros iniciales
         $j=0;
+        $flag = false;
         $largoRut = strlen($rut)-1;
+        $rutNew = '';
         for($i=0; $i<$largoRut; ++$i) {
             if($flag || $rut[$i]) {
                 $flag = true;
@@ -56,11 +57,8 @@ function rut ($rut, $quitarDV = true)
             }
         }
         $rutNew = number_format((int)$rutNew, 0, '', '.');
-        $rutNew .= '-'.$rut[$largoRut];
-        unset($flag, $j, $largoRut, $i);
+        return $rutNew.'-'.$rut[$largoRut];
     }
-    unset($rut, $quitarDV);
-    return $rutNew;
 }
 
 /**
