@@ -28,15 +28,18 @@
  */
 
 /**
- * Transforma un rut a un formato con solo los numeros
+ * Transforma un rut a un formato con solo los numeros o formateado, dependerá
+ * de como sea pasado el rut
  * @param rut Rut que se quiere transformar (puede venir con puntos, comas, si tiene digito verificador DEBE tener guion)
  * @param quitarDV Si es true el digito verificador se quita, sino se mantiene
  * @return Rut formateado
  * @author DeLaF, esteban[at]delaf.cl
- * @version 2014-05-08
+ * @version 2014-09-10
  */
 function rut ($rut, $quitarDV = true)
 {
+    if (!isset($rut[0]))
+        return '';
     $rut = str_replace(['.', ','], '', $rut);
     if (strpos($rut, '-')) {
         if($quitarDV) {
@@ -45,19 +48,8 @@ function rut ($rut, $quitarDV = true)
         }
         return (int)str_replace('-', '', $rut);
     } else {
-        $j=0;
-        $flag = false;
-        $largoRut = strlen($rut)-1;
-        $rutNew = '';
-        for($i=0; $i<$largoRut; ++$i) {
-            if($flag || $rut[$i]) {
-                $flag = true;
-                $rutNew .= $rut[$i];
-                ++$j;
-            }
-        }
-        $rutNew = number_format((int)$rutNew, 0, '', '.');
-        return $rutNew.'-'.$rut[$largoRut];
+        $rutNew = number_format((int)substr($rut, 0, -1), 0, '', '.');
+        return $rutNew.'-'.$rut[strlen($rut)-1];
     }
 }
 
