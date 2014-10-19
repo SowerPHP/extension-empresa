@@ -23,19 +23,24 @@
 
 // Menú para el módulo
 Configure::write('nav.module', array(
+    '/feriados/listar/1/fecha/D' => array(
+        'name' => 'Feriados',
+        'desc' => 'Feriados o días que no se trabaja por cualquier motivo',
+        'imag' => '/sistema/general/img/icons/48x48/feriado.png',
+    ),
     '/actividad_economicas/listar' => array(
         'name' => 'Actividad económica',
         'desc' => 'Listado de actividades económicas del SII',
         'imag' => '/sistema/general/img/icons/48x48/actividad_economica.png',
     ),
+    '/bancos/listar' => array(
+        'name' => 'Bancos',
+        'desc' => 'Listado de bancos de Chile',
+        'imag' => '/sistema/general/img/icons/48x48/banco.png',
+    ),
     '/division_geopolitica' => array(
         'name' => 'División geopolítica',
         'desc' => 'Regiones, provincias y comunas del país',
         'imag' => '/sistema/general/division_geopolitica/img/icons/48x48/region.png',
-    ),
-    '/feriados/listar/1/fecha/D' => array(
-        'name' => 'Feriados',
-        'desc' => 'Feriados o días que no se trabaja por cualquier motivo',
-        'imag' => '/sistema/general/img/icons/48x48/feriado.png',
     ),
 ));

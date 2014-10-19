@@ -21,22 +21,21 @@
  * En caso contrario, consulte <http://www.gnu.org/licenses/gpl.html>.
  */
 
-// Menú para el módulo
-Configure::write('nav.module', array(
-    '/cargos/listar' => array(
-        'name' => 'Cargos',
-        'imag' => '/sistema/empresa/img/icons/48x48/cargo.png',
-    ),
-    '/areas/listar' => array(
-        'name' => 'Áreas',
-        'imag' => '/sistema/empresa/img/icons/48x48/area.png',
-    ),
-    '/sucursales/listar' => array(
-        'name' => 'Sucursales',
-        'imag' => '/sistema/empresa/img/icons/48x48/sucursal.png',
-    ),
-    '/cuenta_corrientes/listar' => array(
-        'name' => 'Cuentas corrientes',
-        'imag' => '/sistema/empresa/img/icons/48x48/cuenta_corriente.png',
-    ),
-));
+// namespace del modelo
+namespace sowerphp\empresa\Sistema\General;
+
+/**
+ * Clase para mapear la tabla banco de la base de datos
+ * Comentario de la tabla: Tabla para bancos
+ * Esta clase permite trabajar sobre un conjunto de registros de la tabla banco
+ * @author SowerPHP Code Generator
+ * @version 2014-10-19 10:08:32
+ */
+class Model_Bancos extends \Model_Plural_App
+{
+
+    // Datos para la conexión a la base de datos
+    protected $_database = 'default'; ///< Base de datos del modelo
+    protected $_table = 'banco'; ///< Tabla del modelo
+
+}
