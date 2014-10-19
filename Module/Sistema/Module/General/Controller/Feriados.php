@@ -21,21 +21,21 @@
  * En caso contrario, consulte <http://www.gnu.org/licenses/gpl.html>.
  */
 
-// Menú para el módulo
-Configure::write('nav.module', array(
-    '/actividad_economicas/listar' => array(
-        'name' => 'Actividad económica',
-        'desc' => 'Listado de actividades económicas del SII',
-        'imag' => '/sistema/general/img/icons/48x48/actividad_economica.png',
-    ),
-    '/division_geopolitica' => array(
-        'name' => 'División geopolítica',
-        'desc' => 'Regiones, provincias y comunas del país',
-        'imag' => '/sistema/general/division_geopolitica/img/icons/48x48/region.png',
-    ),
-    '/feriados/listar/1/fecha/D' => array(
-        'name' => 'Feriados',
-        'desc' => 'Feriados o días que no se trabaja por cualquier motivo',
-        'imag' => '/sistema/general/img/icons/48x48/feriado.png',
-    ),
-));
+// namespace del controlador
+namespace sowerphp\empresa\Sistema\General;
+
+/**
+ * Clase para el controlador asociado a la tabla feriado de la base de
+ * datos
+ * Comentario de la tabla:
+ * Esta clase permite controlar las acciones entre el modelo y vista para la
+ * tabla feriado
+ * @author SowerPHP Code Generator
+ * @version 2014-09-10 14:46:08
+ */
+class Controller_Feriados extends \Controller_Maintainer
+{
+
+    protected $namespace = __NAMESPACE__; ///< Namespace del controlador y modelos asociados
+
+}
