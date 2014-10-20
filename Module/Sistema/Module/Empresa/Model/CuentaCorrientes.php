@@ -29,7 +29,7 @@ namespace sowerphp\empresa\Sistema\Empresa;
  * Comentario de la tabla: Cuentas corrientes de la empresa
  * Esta clase permite trabajar sobre un conjunto de registros de la tabla cuenta_corriente
  * @author SowerPHP Code Generator
- * @version 2014-10-19 10:08:32
+ * @version 2014-10-20 09:55:37
  */
 class Model_CuentaCorrientes extends \Model_Plural_App
 {

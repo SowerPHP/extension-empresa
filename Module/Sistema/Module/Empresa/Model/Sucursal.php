@@ -29,7 +29,7 @@ namespace sowerphp\empresa\Sistema\Empresa;
  * Comentario de la tabla: Sucursales de la empresa
  * Esta clase permite trabajar sobre un registro de la tabla sucursal
  * @author SowerPHP Code Generator
- * @version 2014-10-19 10:08:32
+ * @version 2014-10-19 20:49:00
  */
 class Model_Sucursal extends \Model_App
 {
@@ -49,11 +49,12 @@ class Model_Sucursal extends \Model_App
     public $fax; ///< Fax principal de la sucursal: varchar(20)(20) NULL DEFAULT ''
     public $email; ///< Correo electrónico principal de la sucursal: varchar(50)(50) NULL DEFAULT ''
     public $contrasenia; ///< Contraseña del correo electrónico de la sucursal: varchar(20)(20) NULL DEFAULT ''
+    public $encargado; ///< int(10) unsigned(10) NULL DEFAULT '' FK:empleado.run
 
     // Información de las columnas de la tabla en la base de datos
     public static $columnsInfo = array(
         'id' => array(
-            'name'      => 'ID',
+            'name'      => 'Id',
             'comment'   => 'Identificador de la sucursal',
             'type'      => 'varchar(10)',
             'length'    => 10,
@@ -86,7 +87,7 @@ class Model_Sucursal extends \Model_App
             'fk'        => null
         ),
         'direccion' => array(
-            'name'      => 'Dirección',
+            'name'      => 'Direccion',
             'comment'   => 'Dirección de la sucursal',
             'type'      => 'varchar(100)',
             'length'    => 100,
@@ -108,7 +109,7 @@ class Model_Sucursal extends \Model_App
             'fk'        => array('table' => 'comuna', 'column' => 'codigo')
         ),
         'telefono1' => array(
-            'name'      => 'Teléfono 1',
+            'name'      => 'Telefono1',
             'comment'   => 'Teléfono principal de la sucursal',
             'type'      => 'varchar(30)',
             'length'    => 30,
@@ -119,7 +120,7 @@ class Model_Sucursal extends \Model_App
             'fk'        => null
         ),
         'telefono2' => array(
-            'name'      => 'Teléfono 2',
+            'name'      => 'Telefono2',
             'comment'   => 'Teléfono secundario de la sucursal',
             'type'      => 'varchar(30)',
             'length'    => 30,
@@ -152,7 +153,7 @@ class Model_Sucursal extends \Model_App
             'fk'        => null
         ),
         'contrasenia' => array(
-            'name'      => 'Contraseña',
+            'name'      => 'Contrasenia',
             'comment'   => 'Contraseña del correo electrónico de la sucursal',
             'type'      => 'varchar(20)',
             'length'    => 20,
@@ -162,6 +163,17 @@ class Model_Sucursal extends \Model_App
             'pk'        => false,
             'fk'        => null
         ),
+        'encargado' => array(
+            'name'      => 'Encargado',
+            'comment'   => '',
+            'type'      => 'int(10) unsigned',
+            'length'    => 10,
+            'null'      => true,
+            'default'   => '',
+            'auto'      => false,
+            'pk'        => false,
+            'fk'        => array('table' => 'empleado', 'column' => 'run')
+        ),
 
     );
 
@@ -169,7 +181,8 @@ class Model_Sucursal extends \Model_App
     public static $tableComment = 'Sucursales de la empresa';
 
     public static $fkNamespace = array(
-        'Model_Comuna' => 'sowerphp\empresa\Sistema\General\DivisionGeopolitica'
+        'Model_Comuna' => 'sowerphp\empresa\Sistema\General\DivisionGeopolitica',
+        'Model_Empleado' => 'sowerphp\empresa\Rrhh'
     ); ///< Namespaces que utiliza esta clase
 
 }

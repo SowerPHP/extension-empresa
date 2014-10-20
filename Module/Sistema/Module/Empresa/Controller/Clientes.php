@@ -25,17 +25,21 @@
 namespace sowerphp\empresa\Sistema\Empresa;
 
 /**
- * Clase para el controlador asociado a la tabla cuenta_corriente de la base de
+ * Clase para el controlador asociado a la tabla cliente de la base de
  * datos
- * Comentario de la tabla: Cuentas corrientes de la empresa
+ * Comentario de la tabla: Listado de clientes de la empresa
  * Esta clase permite controlar las acciones entre el modelo y vista para la
- * tabla cuenta_corriente
+ * tabla cliente
  * @author SowerPHP Code Generator
- * @version 2014-10-20 09:55:37
+ * @version 2014-10-19 22:25:56
  */
-class Controller_CuentaCorrientes extends \Controller_Maintainer
+class Controller_Clientes extends \Controller_Maintainer
 {
 
     protected $namespace = __NAMESPACE__; ///< Namespace del controlador y modelos asociados
+
+    protected $columnsView = [
+        'listar'=>['rut', 'razon_social', 'email', 'telefono']
+    ]; ///< Columnas que se deben mostrar en las vistas
 
 }

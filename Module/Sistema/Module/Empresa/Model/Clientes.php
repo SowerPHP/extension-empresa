@@ -21,21 +21,21 @@
  * En caso contrario, consulte <http://www.gnu.org/licenses/gpl.html>.
  */
 
-// namespace del controlador
+// namespace del modelo
 namespace sowerphp\empresa\Sistema\Empresa;
 
 /**
- * Clase para el controlador asociado a la tabla cuenta_corriente de la base de
- * datos
- * Comentario de la tabla: Cuentas corrientes de la empresa
- * Esta clase permite controlar las acciones entre el modelo y vista para la
- * tabla cuenta_corriente
+ * Clase para mapear la tabla cliente de la base de datos
+ * Comentario de la tabla: Listado de clientes de la empresa
+ * Esta clase permite trabajar sobre un conjunto de registros de la tabla cliente
  * @author SowerPHP Code Generator
- * @version 2014-10-20 09:55:37
+ * @version 2014-10-19 22:25:56
  */
-class Controller_CuentaCorrientes extends \Controller_Maintainer
+class Model_Clientes extends \Model_Plural_App
 {
 
-    protected $namespace = __NAMESPACE__; ///< Namespace del controlador y modelos asociados
+    // Datos para la conexión a la base de datos
+    protected $_database = 'default'; ///< Base de datos del modelo
+    protected $_table = 'cliente'; ///< Tabla del modelo
 
 }

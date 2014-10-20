@@ -29,7 +29,7 @@ namespace sowerphp\empresa\Sistema\Empresa;
  * Comentario de la tabla: Sucursales de la empresa
  * Esta clase permite trabajar sobre un conjunto de registros de la tabla sucursal
  * @author SowerPHP Code Generator
- * @version 2014-10-19 10:08:32
+ * @version 2014-10-19 20:49:00
  */
 class Model_Sucursales extends \Model_Plural_App
 {

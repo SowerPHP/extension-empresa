@@ -22,14 +22,14 @@
  */
 
 // namespace del modelo
-namespace sowerphp\empresa\Sistema;
+namespace sowerphp\empresa\Sistema\Empresa;
 
 /**
  * Clase para mapear la tabla cliente de la base de datos
  * Comentario de la tabla: Listado de clientes de la empresa
  * Esta clase permite trabajar sobre un registro de la tabla cliente
  * @author SowerPHP Code Generator
- * @version 2014-04-26 01:33:07
+ * @version 2014-10-19 22:25:56
  */
 class Model_Cliente extends \Model_App
 {
@@ -39,25 +39,24 @@ class Model_Cliente extends \Model_App
     protected $_table = 'cliente'; ///< Tabla del modelo
 
     // Atributos de la clase (columnas en la base de datos)
-    public $rut; ///< RUT del cliente, sin puntos ni dígito verificador: integer(32) NOT NULL DEFAULT '' PK
-    public $dv; ///< Dígito verificador del rut: character(1) NOT NULL DEFAULT ''
-    public $razon_social; ///< Nombre o razón social: character varying(60) NOT NULL DEFAULT ''
-    public $actividad_economica; ///< Actividad económica o bien nulo si es Particular: integer(32) NULL DEFAULT '' FK:actividad_economica.codigo
-    public $email; ///< Correo electrónico principal de contacto: character varying(50) NULL DEFAULT ''
-    public $telefono; ///< Teléfono principal de contacto: character varying(20) NULL DEFAULT ''
-    public $direccion; ///< Dirección de la casa matriz: character varying(100) NULL DEFAULT ''
-    public $comuna; ///< Comuna de la casa matriz: character(5) NOT NULL DEFAULT '' FK:comuna.codigo
-    public $contrasenia; ///< Contraseña para acceder a servicios de la aplicación: character(64) NULL DEFAULT ''
+    public $rut; ///< RUT del cliente, sin puntos ni dígito verificador: int(11)(10) NOT NULL DEFAULT '' PK
+    public $dv; ///< Dígito verificador del rut: char(1)(1) NOT NULL DEFAULT ''
+    public $razon_social; ///< Nombre o razón social: varchar(60)(60) NOT NULL DEFAULT ''
+    public $actividad_economica; ///< Actividad económica del cliente (si posee una): int(11)(10) NULL DEFAULT '' FK:actividad_economica.codigo
+    public $email; ///< Correo electrónico principal de contacto: varchar(50)(50) NULL DEFAULT ''
+    public $telefono; ///< Teléfono principal de contacto: varchar(20)(20) NULL DEFAULT ''
+    public $direccion; ///< Dirección principal: varchar(100)(100) NULL DEFAULT ''
+    public $comuna; ///< Comuna de la dirección: char(5)(5) NULL DEFAULT '' FK:comuna.codigo
 
     // Información de las columnas de la tabla en la base de datos
     public static $columnsInfo = array(
         'rut' => array(
             'name'      => 'Rut',
             'comment'   => 'RUT del cliente, sin puntos ni dígito verificador',
-            'type'      => 'integer',
-            'length'    => 32,
+            'type'      => 'int(11)',
+            'length'    => 10,
             'null'      => false,
-            'default'   => "",
+            'default'   => '',
             'auto'      => false,
             'pk'        => true,
             'fk'        => null
@@ -65,10 +64,10 @@ class Model_Cliente extends \Model_App
         'dv' => array(
             'name'      => 'Dv',
             'comment'   => 'Dígito verificador del rut',
-            'type'      => 'character',
+            'type'      => 'char(1)',
             'length'    => 1,
             'null'      => false,
-            'default'   => "",
+            'default'   => '',
             'auto'      => false,
             'pk'        => false,
             'fk'        => null
@@ -76,21 +75,21 @@ class Model_Cliente extends \Model_App
         'razon_social' => array(
             'name'      => 'Razon Social',
             'comment'   => 'Nombre o razón social',
-            'type'      => 'character varying',
+            'type'      => 'varchar(60)',
             'length'    => 60,
             'null'      => false,
-            'default'   => "",
+            'default'   => '',
             'auto'      => false,
             'pk'        => false,
             'fk'        => null
         ),
         'actividad_economica' => array(
             'name'      => 'Actividad Economica',
-            'comment'   => 'Actividad económica o bien nulo si es Particular',
-            'type'      => 'integer',
-            'length'    => 32,
+            'comment'   => 'Actividad económica del cliente (si posee una)',
+            'type'      => 'int(11)',
+            'length'    => 10,
             'null'      => true,
-            'default'   => "",
+            'default'   => '',
             'auto'      => false,
             'pk'        => false,
             'fk'        => array('table' => 'actividad_economica', 'column' => 'codigo')
@@ -98,10 +97,10 @@ class Model_Cliente extends \Model_App
         'email' => array(
             'name'      => 'Email',
             'comment'   => 'Correo electrónico principal de contacto',
-            'type'      => 'character varying',
+            'type'      => 'varchar(50)',
             'length'    => 50,
             'null'      => true,
-            'default'   => "",
+            'default'   => '',
             'auto'      => false,
             'pk'        => false,
             'fk'        => null
@@ -109,46 +108,35 @@ class Model_Cliente extends \Model_App
         'telefono' => array(
             'name'      => 'Telefono',
             'comment'   => 'Teléfono principal de contacto',
-            'type'      => 'character varying',
+            'type'      => 'varchar(20)',
             'length'    => 20,
             'null'      => true,
-            'default'   => "",
+            'default'   => '',
             'auto'      => false,
             'pk'        => false,
             'fk'        => null
         ),
         'direccion' => array(
             'name'      => 'Direccion',
-            'comment'   => 'Dirección de la casa matriz',
-            'type'      => 'character varying',
+            'comment'   => 'Dirección principal',
+            'type'      => 'varchar(100)',
             'length'    => 100,
             'null'      => true,
-            'default'   => "",
+            'default'   => '',
             'auto'      => false,
             'pk'        => false,
             'fk'        => null
         ),
         'comuna' => array(
             'name'      => 'Comuna',
-            'comment'   => 'Comuna de la casa matriz',
-            'type'      => 'character',
+            'comment'   => 'Comuna de la dirección',
+            'type'      => 'char(5)',
             'length'    => 5,
-            'null'      => false,
-            'default'   => "",
+            'null'      => true,
+            'default'   => '',
             'auto'      => false,
             'pk'        => false,
             'fk'        => array('table' => 'comuna', 'column' => 'codigo')
-        ),
-        'contrasenia' => array(
-            'name'      => 'Contrasenia',
-            'comment'   => 'Contraseña para acceder a servicios de la aplicación',
-            'type'      => 'character',
-            'length'    => 64,
-            'null'      => true,
-            'default'   => "",
-            'auto'      => false,
-            'pk'        => false,
-            'fk'        => null
         ),
 
     );

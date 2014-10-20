@@ -29,7 +29,7 @@ namespace sowerphp\empresa\Sistema\Empresa;
  * Comentario de la tabla: Cuentas corrientes de la empresa
  * Esta clase permite trabajar sobre un registro de la tabla cuenta_corriente
  * @author SowerPHP Code Generator
- * @version 2014-10-19 10:08:32
+ * @version 2014-10-20 09:55:37
  */
 class Model_CuentaCorriente extends \Model_App
 {
@@ -39,12 +39,24 @@ class Model_CuentaCorriente extends \Model_App
     protected $_table = 'cuenta_corriente'; ///< Tabla del modelo
 
     // Atributos de la clase (columnas en la base de datos)
-    public $banco; ///< Identificador de la cuenta corriente: char(3)(3) NOT NULL DEFAULT '' PK FK:banco.codigo
-    public $cuenta_corriente; ///< Número de cuenta corriente: varchar(20)(20) NOT NULL DEFAULT '' PK
+    public $codigo; ///< Código único de la cuenta corriente: varchar(20)(20) NOT NULL DEFAULT '' PK
+    public $banco; ///< Identificador de la cuenta corriente: char(3)(3) NOT NULL DEFAULT '' FK:banco.codigo
+    public $cuenta_corriente; ///< Número de cuenta corriente: varchar(20)(20) NOT NULL DEFAULT ''
     public $activa; ///< Indica si la cuenta corriente está o no activa: tinyint(1)(3) NOT NULL DEFAULT '1'
 
     // Información de las columnas de la tabla en la base de datos
     public static $columnsInfo = array(
+        'codigo' => array(
+            'name'      => 'Codigo',
+            'comment'   => 'Código único de la cuenta corriente',
+            'type'      => 'varchar(20)',
+            'length'    => 20,
+            'null'      => false,
+            'default'   => '',
+            'auto'      => false,
+            'pk'        => true,
+            'fk'        => null
+        ),
         'banco' => array(
             'name'      => 'Banco',
             'comment'   => 'Identificador de la cuenta corriente',
@@ -53,7 +65,7 @@ class Model_CuentaCorriente extends \Model_App
             'null'      => false,
             'default'   => '',
             'auto'      => false,
-            'pk'        => true,
+            'pk'        => false,
             'fk'        => array('table' => 'banco', 'column' => 'codigo')
         ),
         'cuenta_corriente' => array(
@@ -64,7 +76,7 @@ class Model_CuentaCorriente extends \Model_App
             'null'      => false,
             'default'   => '',
             'auto'      => false,
-            'pk'        => true,
+            'pk'        => false,
             'fk'        => null
         ),
         'activa' => array(

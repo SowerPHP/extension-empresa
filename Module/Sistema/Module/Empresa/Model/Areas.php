@@ -21,21 +21,21 @@
  * En caso contrario, consulte <http://www.gnu.org/licenses/gpl.html>.
  */
 
-// namespace del controlador
-namespace sowerphp\empresa\Sistema;
+// namespace del modelo
+namespace sowerphp\empresa\Sistema\Empresa;
 
 /**
- * Clase para el controlador asociado a la tabla cliente de la base de
- * datos
- * Comentario de la tabla: Listado de clientes de la empresa
- * Esta clase permite controlar las acciones entre el modelo y vista para la
- * tabla cliente
+ * Clase para mapear la tabla area de la base de datos
+ * Comentario de la tabla: Áreas de la empresa
+ * Esta clase permite trabajar sobre un conjunto de registros de la tabla area
  * @author SowerPHP Code Generator
- * @version 2014-04-26 01:33:07
+ * @version 2014-10-19 20:49:00
  */
-class Controller_Clientes extends \Controller_Maintainer
+class Model_Areas extends \Model_Plural_App
 {
 
-    protected $namespace = __NAMESPACE__; ///< Namespace del controlador y modelos asociados
+    // Datos para la conexión a la base de datos
+    protected $_database = 'default'; ///< Base de datos del modelo
+    protected $_table = 'area'; ///< Tabla del modelo
 
 }

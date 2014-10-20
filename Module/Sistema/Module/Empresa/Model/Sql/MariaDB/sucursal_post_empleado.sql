@@ -1,0 +1,10 @@
+BEGIN;
+
+ALTER TABLE sucursal ADD COLUMN encargado INTEGER UNSIGNED;
+
+ALTER TABLE sucursal ADD CONSTRAINT sucursal_encargado_fk
+	FOREIGN KEY (encargado) REFERENCES empleado (run) MATCH FULL
+	ON UPDATE CASCADE ON DELETE SET NULL
+;
+
+COMMIT;

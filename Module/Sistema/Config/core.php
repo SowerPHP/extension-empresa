@@ -23,16 +23,6 @@
 
 // Menú para el módulo
 Configure::write('nav.module', array(
-    '/clientes/listar' => array(
-        'name' => 'Clientes',
-        'desc' => 'Mantenedor de clientes',
-        'imag' => '/sistema/img/icons/48x48/cliente.png',
-    ),
-    '/proveedores/listar' => array(
-        'name' => 'Proveedores',
-        'desc' => 'Mantenedor de proveedores',
-        'imag' => '/sistema/img/icons/48x48/proveedor.png',
-    ),
     '/empresa' => array(
         'name' => 'Empresa',
         'desc' => 'Configuración y parámetros de la empresa',

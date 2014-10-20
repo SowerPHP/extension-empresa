@@ -23,6 +23,16 @@
 
 // Menú para el módulo
 Configure::write('nav.module', array(
+    '/clientes/listar' => array(
+        'name' => 'Clientes',
+        'desc' => 'Mantenedor de clientes',
+        'imag' => '/sistema/empresa/img/icons/48x48/cliente.png',
+    ),
+    '/proveedores/listar' => array(
+        'name' => 'Proveedores',
+        'desc' => 'Mantenedor de proveedores',
+        'imag' => '/sistema/empresa/img/icons/48x48/proveedor.png',
+    ),
     '/cargos/listar' => array(
         'name' => 'Cargos',
         'imag' => '/sistema/empresa/img/icons/48x48/cargo.png',
@@ -35,7 +45,7 @@ Configure::write('nav.module', array(
         'name' => 'Sucursales',
         'imag' => '/sistema/empresa/img/icons/48x48/sucursal.png',
     ),
-    '/cuenta_corrientes/listar' => array(
+    '/cuenta_corrientes/listar?search=activa:1' => array(
         'name' => 'Cuentas corrientes',
         'imag' => '/sistema/empresa/img/icons/48x48/cuenta_corriente.png',
     ),

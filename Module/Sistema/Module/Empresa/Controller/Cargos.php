@@ -21,21 +21,21 @@
  * En caso contrario, consulte <http://www.gnu.org/licenses/gpl.html>.
  */
 
-// namespace del modelo
-namespace sowerphp\empresa\Sistema;
+// namespace del controlador
+namespace sowerphp\empresa\Sistema\Empresa;
 
 /**
- * Clase para mapear la tabla proveedor de la base de datos
- * Comentario de la tabla: Listado de proveedores de la empresa
- * Esta clase permite trabajar sobre un conjunto de registros de la tabla proveedor
+ * Clase para el controlador asociado a la tabla cargo de la base de
+ * datos
+ * Comentario de la tabla: Cargos de la empresa
+ * Esta clase permite controlar las acciones entre el modelo y vista para la
+ * tabla cargo
  * @author SowerPHP Code Generator
- * @version 2014-04-26 01:33:07
+ * @version 2014-10-19 20:49:00
  */
-class Model_Proveedores extends \Model_Plural_App
+class Controller_Cargos extends \Controller_Maintainer
 {
 
-    // Datos para la conexión a la base de datos
-    protected $_database = 'default'; ///< Base de datos del modelo
-    protected $_table = 'proveedor'; ///< Tabla del modelo
+    protected $namespace = __NAMESPACE__; ///< Namespace del controlador y modelos asociados
 
 }

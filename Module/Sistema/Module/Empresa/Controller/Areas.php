@@ -22,18 +22,18 @@
  */
 
 // namespace del controlador
-namespace sowerphp\empresa\Sistema;
+namespace sowerphp\empresa\Sistema\Empresa;
 
 /**
- * Clase para el controlador asociado a la tabla proveedor de la base de
+ * Clase para el controlador asociado a la tabla area de la base de
  * datos
- * Comentario de la tabla: Listado de proveedores de la empresa
+ * Comentario de la tabla: Áreas de la empresa
  * Esta clase permite controlar las acciones entre el modelo y vista para la
- * tabla proveedor
+ * tabla area
  * @author SowerPHP Code Generator
- * @version 2014-04-26 01:33:07
+ * @version 2014-10-19 20:49:00
  */
-class Controller_Proveedores extends \Controller_Maintainer
+class Controller_Areas extends \Controller_Maintainer
 {
 
     protected $namespace = __NAMESPACE__; ///< Namespace del controlador y modelos asociados
