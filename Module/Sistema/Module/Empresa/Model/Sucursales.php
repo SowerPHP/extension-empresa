@@ -38,4 +38,39 @@ class Model_Sucursales extends \Model_Plural_App
     protected $_database = 'default'; ///< Base de datos del modelo
     protected $_table = 'sucursal'; ///< Tabla del modelo
 
+    /**
+     * Método que entrega el listado de sucursales
+     * @return Tabla con las sucursales
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
+     * @version 2014-10-20
+     */
+    public function getList()
+    {
+        return $this->db->getTable('
+            SELECT
+                id,
+                CONCAT(id, \': \', sucursal) AS sucursal
+            FROM sucursal
+            ORDER BY matriz DESC, id ASC
+        ');
+    }
+
+    /**
+     * Método que entrega el listado de sucursales con su correo electrónico
+     * @return Tabla con las sucursales y su correo electrónico
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
+     * @version 2014-10-21
+     */
+    public function getListWithEmail()
+    {
+        return $this->db->getTable('
+            SELECT
+                id,
+                CONCAT(id, \': \', sucursal, \' (\', email, \')\') AS sucursal
+            FROM sucursal
+            WHERE email IS NOT NULL
+            ORDER BY matriz DESC, id ASC
+        ');
+    }
+
 }
