@@ -8,8 +8,10 @@ CREATE TABLE sucursal (
 		COMMENT 'Nombre de la sucursal',
 	matriz BOOLEAN NOT NULL DEFAULT false
 		COMMENT 'Indica si la sucursal es la casa matriz',
-	direccion CHARACTER VARYING (100)
-		COMMENT 'Dirección de la sucursal',
+	direccion CHARACTER VARYING (50)
+		COMMENT 'Dirección de la sucursal (calle y número)',
+	direccion_extra CHARACTER VARYING (50)
+		COMMENT 'Información que no es parte de la calle ni el número',
 	comuna CHAR (5)
 		COMMENT 'Comuna de la sucursal',
 	telefono1 CHARACTER VARYING (30)

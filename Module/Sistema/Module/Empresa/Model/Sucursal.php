@@ -42,7 +42,8 @@ class Model_Sucursal extends \Model_App
     public $id; ///< Identificador de la sucursal: varchar(10)(10) NOT NULL DEFAULT '' PK
     public $sucursal; ///< Nombre de la sucursal: varchar(30)(30) NOT NULL DEFAULT ''
     public $matriz; ///< Indica si la sucursal es la casa matriz: tinyint(1)(3) NOT NULL DEFAULT '0'
-    public $direccion; ///< Dirección de la sucursal: varchar(100)(100) NULL DEFAULT ''
+    public $direccion; ///< Dirección de la sucursal (calle y número): varchar(50)(50) NULL DEFAULT ''
+    public $direccion_extra; ///< Información que no es parte de la calle ni el número: varchar(50)(50) NULL DEFAULT ''
     public $comuna; ///< Comuna de la sucursal: char(5)(5) NULL DEFAULT '' FK:comuna.codigo
     public $telefono1; ///< Teléfono principal de la sucursal: varchar(30)(30) NULL DEFAULT ''
     public $telefono2; ///< Teléfono secundario de la sucursal: varchar(30)(30) NULL DEFAULT ''
@@ -87,10 +88,21 @@ class Model_Sucursal extends \Model_App
             'fk'        => null
         ),
         'direccion' => array(
-            'name'      => 'Direccion',
-            'comment'   => 'Dirección de la sucursal',
-            'type'      => 'varchar(100)',
-            'length'    => 100,
+            'name'      => 'Dirección',
+            'comment'   => 'Dirección de la sucursal (calle y número)',
+            'type'      => 'varchar(50)',
+            'length'    => 50,
+            'null'      => true,
+            'default'   => '',
+            'auto'      => false,
+            'pk'        => false,
+            'fk'        => null
+        ),
+        'direccion_extra' => array(
+            'name'      => 'Dirección extra',
+            'comment'   => 'Información que no es parte de la calle ni el número',
+            'type'      => 'varchar(50)',
+            'length'    => 50,
             'null'      => true,
             'default'   => '',
             'auto'      => false,
@@ -109,7 +121,7 @@ class Model_Sucursal extends \Model_App
             'fk'        => array('table' => 'comuna', 'column' => 'codigo')
         ),
         'telefono1' => array(
-            'name'      => 'Telefono1',
+            'name'      => 'Teléfono 1',
             'comment'   => 'Teléfono principal de la sucursal',
             'type'      => 'varchar(30)',
             'length'    => 30,
@@ -120,7 +132,7 @@ class Model_Sucursal extends \Model_App
             'fk'        => null
         ),
         'telefono2' => array(
-            'name'      => 'Telefono2',
+            'name'      => 'Teléfono 2',
             'comment'   => 'Teléfono secundario de la sucursal',
             'type'      => 'varchar(30)',
             'length'    => 30,
@@ -153,7 +165,7 @@ class Model_Sucursal extends \Model_App
             'fk'        => null
         ),
         'contrasenia' => array(
-            'name'      => 'Contrasenia',
+            'name'      => 'Contraseña del email',
             'comment'   => 'Contraseña del correo electrónico de la sucursal',
             'type'      => 'varchar(20)',
             'length'    => 20,
