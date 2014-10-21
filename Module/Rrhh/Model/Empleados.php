@@ -53,4 +53,17 @@ class Model_Empleados extends \Model_Plural_App
         ');
     }
 
+    /**
+     * Método que entrega un empleado a partir de su nombre de usuario
+     * @return Model_Empleado o null si no se encontró
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
+     * @version 2014-10-21
+     */
+    public function getByUser($user)
+    {
+        $this->setWhereStatement(['usuario = :usuario'], [':usuario'=>$user]);
+        $empleados = $this->getObjects();
+        return !empty($empleados) ? $empleados[0] : null;
+    }
+
 }
