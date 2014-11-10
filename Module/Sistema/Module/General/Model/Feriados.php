@@ -38,26 +38,46 @@ class Model_Feriados extends \Model_Plural_App
     protected $_database = 'default'; ///< Base de datos del modelo
     protected $_table = 'feriado'; ///< Tabla del modelo
 
-    private static $feriados = []; ///< Caché para feriados
+    private static $feriados = ['desde'=>[], 'hasta'=>[]]; ///< Caché para feriados
 
     /**
-     * Método que entrega todos los feriados desde la fecha consultada
+     * Método que entrega los feriados desde la fecha consultada
      * @param fecha Fecha desde cuando (inclusive) se consultarán feriados
      * @return Columna con los días feriados encontrados
      * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
-     * @version 2014-09-10
+     * @version 2014-11-10
      */
     public function desde($fecha)
     {
-        if (!isset(self::$feriados[$fecha])) {
-            self::$feriados[$fecha] = $this->db->getCol('
+        if (!isset(self::$feriados['desde'][$fecha])) {
+            self::$feriados['desde'][$fecha] = $this->db->getCol('
                 SELECT fecha
                 FROM feriado
                 WHERE fecha >= :fecha
                 ORDER BY fecha ASC
             ', [':fecha'=>$fecha]);
         }
-        return self::$feriados[$fecha];
+        return self::$feriados['desde'][$fecha];
+    }
+
+    /**
+     * Método que entrega los feriados hasta la fecha consultada
+     * @param fecha Fecha hasta cuando (inclusive) se consultarán feriados
+     * @return Columna con los días feriados encontrados
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
+     * @version 2014-11-10
+     */
+    public function hasta($fecha)
+    {
+        if (!isset(self::$feriados['hasta'][$fecha])) {
+            self::$feriados['hasta'][$fecha] = $this->db->getCol('
+                SELECT fecha
+                FROM feriado
+                WHERE fecha <= :fecha
+                ORDER BY fecha DESC
+            ', [':fecha'=>$fecha]);
+        }
+        return self::$feriados['hasta'][$fecha];
     }
 
 }
