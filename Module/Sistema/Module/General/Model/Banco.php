@@ -47,7 +47,7 @@ class Model_Banco extends \Model_App
         'codigo' => array(
             'name'      => 'Codigo',
             'comment'   => 'Código de banco de la SBIF',
-            'type'      => 'char(3)',
+            'type'      => 'char',
             'length'    => 3,
             'null'      => false,
             'default'   => '',
@@ -58,7 +58,7 @@ class Model_Banco extends \Model_App
         'banco' => array(
             'name'      => 'Banco',
             'comment'   => 'Nombre del banco',
-            'type'      => 'varchar(40)',
+            'type'      => 'varchar',
             'length'    => 40,
             'null'      => false,
             'default'   => '',

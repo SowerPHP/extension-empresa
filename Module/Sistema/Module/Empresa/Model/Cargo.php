@@ -49,7 +49,7 @@ class Model_Cargo extends \Model_App
         'id' => array(
             'name'      => 'Id',
             'comment'   => 'Identificador del cargo',
-            'type'      => 'int(10) unsigned',
+            'type'      => 'int unsigned',
             'length'    => 10,
             'null'      => false,
             'default'   => '',
@@ -60,7 +60,7 @@ class Model_Cargo extends \Model_App
         'cargo' => array(
             'name'      => 'Cargo',
             'comment'   => 'Nombre del cargo',
-            'type'      => 'varchar(30)',
+            'type'      => 'varchar',
             'length'    => 30,
             'null'      => false,
             'default'   => '',
@@ -71,7 +71,7 @@ class Model_Cargo extends \Model_App
         'jefe' => array(
             'name'      => 'Jefe',
             'comment'   => 'Cargo superior a este cargo',
-            'type'      => 'int(10) unsigned',
+            'type'      => 'int unsigned',
             'length'    => 10,
             'null'      => true,
             'default'   => '',
@@ -82,7 +82,7 @@ class Model_Cargo extends \Model_App
         'area' => array(
             'name'      => 'Area',
             'comment'   => 'Área en la que se desempeña este cargo',
-            'type'      => 'int(10) unsigned',
+            'type'      => 'int unsigned',
             'length'    => 10,
             'null'      => true,
             'default'   => '',

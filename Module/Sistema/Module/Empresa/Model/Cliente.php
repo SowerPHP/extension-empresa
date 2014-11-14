@@ -53,7 +53,7 @@ class Model_Cliente extends \Model_App
         'rut' => array(
             'name'      => 'Rut',
             'comment'   => 'RUT del cliente, sin puntos ni dígito verificador',
-            'type'      => 'int(11)',
+            'type'      => 'int',
             'length'    => 10,
             'null'      => false,
             'default'   => '',
@@ -64,7 +64,7 @@ class Model_Cliente extends \Model_App
         'dv' => array(
             'name'      => 'Dv',
             'comment'   => 'Dígito verificador del rut',
-            'type'      => 'char(1)',
+            'type'      => 'char',
             'length'    => 1,
             'null'      => false,
             'default'   => '',
@@ -75,7 +75,7 @@ class Model_Cliente extends \Model_App
         'razon_social' => array(
             'name'      => 'Razon Social',
             'comment'   => 'Nombre o razón social',
-            'type'      => 'varchar(60)',
+            'type'      => 'varchar',
             'length'    => 60,
             'null'      => false,
             'default'   => '',
@@ -86,7 +86,7 @@ class Model_Cliente extends \Model_App
         'actividad_economica' => array(
             'name'      => 'Actividad Economica',
             'comment'   => 'Actividad económica del cliente (si posee una)',
-            'type'      => 'int(11)',
+            'type'      => 'int',
             'length'    => 10,
             'null'      => true,
             'default'   => '',
@@ -97,7 +97,7 @@ class Model_Cliente extends \Model_App
         'email' => array(
             'name'      => 'Email',
             'comment'   => 'Correo electrónico principal de contacto',
-            'type'      => 'varchar(50)',
+            'type'      => 'varchar',
             'length'    => 50,
             'null'      => true,
             'default'   => '',
@@ -108,7 +108,7 @@ class Model_Cliente extends \Model_App
         'telefono' => array(
             'name'      => 'Telefono',
             'comment'   => 'Teléfono principal de contacto',
-            'type'      => 'varchar(20)',
+            'type'      => 'varchar',
             'length'    => 20,
             'null'      => true,
             'default'   => '',
@@ -119,7 +119,7 @@ class Model_Cliente extends \Model_App
         'direccion' => array(
             'name'      => 'Direccion',
             'comment'   => 'Dirección principal',
-            'type'      => 'varchar(100)',
+            'type'      => 'varchar',
             'length'    => 100,
             'null'      => true,
             'default'   => '',
@@ -130,7 +130,7 @@ class Model_Cliente extends \Model_App
         'comuna' => array(
             'name'      => 'Comuna',
             'comment'   => 'Comuna de la dirección',
-            'type'      => 'char(5)',
+            'type'      => 'char',
             'length'    => 5,
             'null'      => true,
             'default'   => '',

@@ -49,7 +49,7 @@ class Model_CuentaCorriente extends \Model_App
         'codigo' => array(
             'name'      => 'Codigo',
             'comment'   => 'Código único de la cuenta corriente',
-            'type'      => 'varchar(20)',
+            'type'      => 'varchar',
             'length'    => 20,
             'null'      => false,
             'default'   => '',
@@ -60,7 +60,7 @@ class Model_CuentaCorriente extends \Model_App
         'banco' => array(
             'name'      => 'Banco',
             'comment'   => 'Identificador de la cuenta corriente',
-            'type'      => 'char(3)',
+            'type'      => 'char',
             'length'    => 3,
             'null'      => false,
             'default'   => '',
@@ -71,7 +71,7 @@ class Model_CuentaCorriente extends \Model_App
         'cuenta_corriente' => array(
             'name'      => 'Cuenta Corriente',
             'comment'   => 'Número de cuenta corriente',
-            'type'      => 'varchar(20)',
+            'type'      => 'varchar',
             'length'    => 20,
             'null'      => false,
             'default'   => '',
@@ -82,7 +82,7 @@ class Model_CuentaCorriente extends \Model_App
         'activa' => array(
             'name'      => 'Activa',
             'comment'   => 'Indica si la cuenta corriente está o no activa',
-            'type'      => 'tinyint(1)',
+            'type'      => 'tinyint',
             'length'    => 3,
             'null'      => false,
             'default'   => '1',

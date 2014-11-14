@@ -48,7 +48,7 @@ class Model_Area extends \Model_App
         'id' => array(
             'name'      => 'Id',
             'comment'   => 'Identificador del área',
-            'type'      => 'int(10) unsigned',
+            'type'      => 'int unsigned',
             'length'    => 10,
             'null'      => false,
             'default'   => '',
@@ -59,7 +59,7 @@ class Model_Area extends \Model_App
         'area' => array(
             'name'      => 'Area',
             'comment'   => 'Nombre del área',
-            'type'      => 'varchar(30)',
+            'type'      => 'varchar',
             'length'    => 30,
             'null'      => false,
             'default'   => '',
@@ -70,7 +70,7 @@ class Model_Area extends \Model_App
         'superior' => array(
             'name'      => 'Superior',
             'comment'   => 'Área a la que pertenece esta área',
-            'type'      => 'int(10) unsigned',
+            'type'      => 'int unsigned',
             'length'    => 10,
             'null'      => true,
             'default'   => '',

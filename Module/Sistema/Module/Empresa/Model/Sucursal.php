@@ -57,7 +57,7 @@ class Model_Sucursal extends \Model_App
         'id' => array(
             'name'      => 'Id',
             'comment'   => 'Identificador de la sucursal',
-            'type'      => 'varchar(10)',
+            'type'      => 'varchar',
             'length'    => 10,
             'null'      => false,
             'default'   => '',
@@ -68,7 +68,7 @@ class Model_Sucursal extends \Model_App
         'sucursal' => array(
             'name'      => 'Sucursal',
             'comment'   => 'Nombre de la sucursal',
-            'type'      => 'varchar(30)',
+            'type'      => 'varchar',
             'length'    => 30,
             'null'      => false,
             'default'   => '',
@@ -79,7 +79,7 @@ class Model_Sucursal extends \Model_App
         'matriz' => array(
             'name'      => 'Matriz',
             'comment'   => 'Indica si la sucursal es la casa matriz',
-            'type'      => 'tinyint(1)',
+            'type'      => 'tinyint',
             'length'    => 3,
             'null'      => false,
             'default'   => '0',
@@ -90,7 +90,7 @@ class Model_Sucursal extends \Model_App
         'direccion' => array(
             'name'      => 'Dirección',
             'comment'   => 'Dirección de la sucursal (calle y número)',
-            'type'      => 'varchar(50)',
+            'type'      => 'varchar',
             'length'    => 50,
             'null'      => true,
             'default'   => '',
@@ -101,7 +101,7 @@ class Model_Sucursal extends \Model_App
         'direccion_extra' => array(
             'name'      => 'Dirección extra',
             'comment'   => 'Información que no es parte de la calle ni el número',
-            'type'      => 'varchar(50)',
+            'type'      => 'varchar',
             'length'    => 50,
             'null'      => true,
             'default'   => '',
@@ -112,7 +112,7 @@ class Model_Sucursal extends \Model_App
         'comuna' => array(
             'name'      => 'Comuna',
             'comment'   => 'Comuna de la sucursal',
-            'type'      => 'char(5)',
+            'type'      => 'char',
             'length'    => 5,
             'null'      => true,
             'default'   => '',
@@ -123,7 +123,7 @@ class Model_Sucursal extends \Model_App
         'telefono1' => array(
             'name'      => 'Teléfono 1',
             'comment'   => 'Teléfono principal de la sucursal',
-            'type'      => 'varchar(30)',
+            'type'      => 'varchar',
             'length'    => 30,
             'null'      => true,
             'default'   => '',
@@ -134,7 +134,7 @@ class Model_Sucursal extends \Model_App
         'telefono2' => array(
             'name'      => 'Teléfono 2',
             'comment'   => 'Teléfono secundario de la sucursal',
-            'type'      => 'varchar(30)',
+            'type'      => 'varchar',
             'length'    => 30,
             'null'      => true,
             'default'   => '',
@@ -145,7 +145,7 @@ class Model_Sucursal extends \Model_App
         'fax' => array(
             'name'      => 'Fax',
             'comment'   => 'Fax principal de la sucursal',
-            'type'      => 'varchar(20)',
+            'type'      => 'varchar',
             'length'    => 20,
             'null'      => true,
             'default'   => '',
@@ -156,7 +156,7 @@ class Model_Sucursal extends \Model_App
         'email' => array(
             'name'      => 'Email',
             'comment'   => 'Correo electrónico principal de la sucursal',
-            'type'      => 'varchar(50)',
+            'type'      => 'varchar',
             'length'    => 50,
             'null'      => true,
             'default'   => '',
@@ -167,7 +167,7 @@ class Model_Sucursal extends \Model_App
         'contrasenia' => array(
             'name'      => 'Contraseña del email',
             'comment'   => 'Contraseña del correo electrónico de la sucursal',
-            'type'      => 'varchar(20)',
+            'type'      => 'varchar',
             'length'    => 20,
             'null'      => true,
             'default'   => '',
@@ -178,7 +178,7 @@ class Model_Sucursal extends \Model_App
         'encargado' => array(
             'name'      => 'Encargado',
             'comment'   => '',
-            'type'      => 'int(10) unsigned',
+            'type'      => 'int unsigned',
             'length'    => 10,
             'null'      => true,
             'default'   => '',

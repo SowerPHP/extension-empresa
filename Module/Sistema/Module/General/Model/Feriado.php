@@ -58,7 +58,7 @@ class Model_Feriado extends \Model_App
         'descripcion' => array(
             'name'      => 'Descripcion',
             'comment'   => '',
-            'type'      => 'varchar(30)',
+            'type'      => 'varchar',
             'length'    => 30,
             'null'      => false,
             'default'   => '',
