@@ -44,6 +44,7 @@ class Model_Empleado extends \Model_App
     public $nombres; ///< Nombres de la persona: varchar(30)(30) NOT NULL DEFAULT ''
     public $apellidos; ///< Apellidos de la persona: varchar(30)(30) NOT NULL DEFAULT ''
     public $fecha_nacimiento; ///< Fecha de nacimiento de la persona: date() NULL DEFAULT ''
+    public $fecha_ingreso; ///< Fecha de ingreso a la empresa: date() NULL DEFAULT ''
     public $sucursal; ///< Sucursal en la que trabaja este empleado: varchar(10)(10) NULL DEFAULT '' FK:sucursal.id
     public $cargo; ///< Cargo que ocupa dentro de la empresa: int(10) unsigned(10) NULL DEFAULT '' FK:cargo.id
     public $foto_data; ///< Fotografía de la persona: mediumblob(16777215) NULL DEFAULT ''
@@ -56,9 +57,9 @@ class Model_Empleado extends \Model_App
     // Información de las columnas de la tabla en la base de datos
     public static $columnsInfo = array(
         'run' => array(
-            'name'      => 'Run',
+            'name'      => 'RUN',
             'comment'   => 'RUN de la persona, sin puntos ni dígito verificador',
-            'type'      => 'int(10) unsigned',
+            'type'      => 'int unsigned',
             'length'    => 10,
             'null'      => false,
             'default'   => '',
@@ -67,9 +68,9 @@ class Model_Empleado extends \Model_App
             'fk'        => null
         ),
         'dv' => array(
-            'name'      => 'Dv',
+            'name'      => 'DV',
             'comment'   => 'Dígito verificador del RUN',
-            'type'      => 'char(1)',
+            'type'      => 'char',
             'length'    => 1,
             'null'      => false,
             'default'   => '',
@@ -80,7 +81,7 @@ class Model_Empleado extends \Model_App
         'nombres' => array(
             'name'      => 'Nombres',
             'comment'   => 'Nombres de la persona',
-            'type'      => 'varchar(30)',
+            'type'      => 'varchar',
             'length'    => 30,
             'null'      => false,
             'default'   => '',
@@ -91,7 +92,7 @@ class Model_Empleado extends \Model_App
         'apellidos' => array(
             'name'      => 'Apellidos',
             'comment'   => 'Apellidos de la persona',
-            'type'      => 'varchar(30)',
+            'type'      => 'varchar',
             'length'    => 30,
             'null'      => false,
             'default'   => '',
@@ -110,10 +111,21 @@ class Model_Empleado extends \Model_App
             'pk'        => false,
             'fk'        => null
         ),
+        'fecha_ingreso' => array(
+            'name'      => 'Fecha Ingreso',
+            'comment'   => 'Fecha de ingreso a la empresa',
+            'type'      => 'date',
+            'length'    => null,
+            'null'      => true,
+            'default'   => '',
+            'auto'      => false,
+            'pk'        => false,
+            'fk'        => null
+        ),
         'sucursal' => array(
             'name'      => 'Sucursal',
             'comment'   => 'Sucursal en la que trabaja este empleado',
-            'type'      => 'varchar(10)',
+            'type'      => 'varchar',
             'length'    => 10,
             'null'      => true,
             'default'   => '',
@@ -124,7 +136,7 @@ class Model_Empleado extends \Model_App
         'cargo' => array(
             'name'      => 'Cargo',
             'comment'   => 'Cargo que ocupa dentro de la empresa',
-            'type'      => 'int(10) unsigned',
+            'type'      => 'int unsigned',
             'length'    => 10,
             'null'      => true,
             'default'   => '',
@@ -146,7 +158,7 @@ class Model_Empleado extends \Model_App
         'foto_name' => array(
             'name'      => 'Fotografía',
             'comment'   => 'Fotografía del empleado',
-            'type'      => 'varchar(100)',
+            'type'      => 'varchar',
             'length'    => 100,
             'null'      => true,
             'default'   => '',
@@ -157,7 +169,7 @@ class Model_Empleado extends \Model_App
         'foto_type' => array(
             'name'      => 'Foto Type',
             'comment'   => 'Mimetype de la fotografía',
-            'type'      => 'varchar(10)',
+            'type'      => 'varchar',
             'length'    => 10,
             'null'      => true,
             'default'   => '',
@@ -168,7 +180,7 @@ class Model_Empleado extends \Model_App
         'foto_size' => array(
             'name'      => 'Foto Size',
             'comment'   => 'Tamaño de la fotografía',
-            'type'      => 'int(11)',
+            'type'      => 'int',
             'length'    => 10,
             'null'      => true,
             'default'   => '',
@@ -179,7 +191,7 @@ class Model_Empleado extends \Model_App
         'usuario' => array(
             'name'      => 'Usuario',
             'comment'   => 'Usuario del sistema (si es que tiene uno asignado)',
-            'type'      => 'int(10) unsigned',
+            'type'      => 'int unsigned',
             'length'    => 10,
             'null'      => true,
             'default'   => '',
@@ -190,7 +202,7 @@ class Model_Empleado extends \Model_App
         'activo' => array(
             'name'      => 'Activo',
             'comment'   => 'Indica si la persona aun pertenece a la empresa',
-            'type'      => 'tinyint(1)',
+            'type'      => 'tinyint',
             'length'    => 3,
             'null'      => false,
             'default'   => '1',

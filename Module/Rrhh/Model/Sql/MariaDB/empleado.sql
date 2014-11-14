@@ -14,6 +14,8 @@ CREATE TABLE empleado (
 		COMMENT 'Apellidos de la persona',
 	fecha_nacimiento DATE
 		COMMENT 'Fecha de nacimiento de la persona',
+	fecha_ingreso DATE
+		COMMENT 'Fecha de ingreso a la empresa',
 	sucursal CHARACTER VARYING (10)
 		COMMENT 'Sucursal en la que trabaja este empleado',
 	cargo INTEGER UNSIGNED
