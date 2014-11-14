@@ -49,7 +49,7 @@ class Controller_Empleados extends \Controller_Maintainer
      */
     public function beforeFilter()
     {
-        $this->Auth->allowWithLogin('cumpleanios');
+        $this->Auth->allowWithLogin('d', 'cumpleanios');
         parent::beforeFilter();
     }
 
@@ -65,6 +65,53 @@ class Controller_Empleados extends \Controller_Maintainer
             'desde' => $desde,
             'cumpleanios' => (new Model_Empleados())->cumpleanios($desde, $mostrar)
         ]);
+    }
+
+    /**
+     * Método para descargar un archivo desde la base de datos
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]delaf.cl)
+     * @version 2014-11-14
+     */
+    public function d ($campo, $run)
+    {
+        // si se pide un campo diferente a la foto se usa la acción de la clase
+        // madre
+        if ($campo!='foto') {
+            parent::d($campo, $run);
+            return;
+        }
+        // si el campo que se solicita no existe error
+        if (!isset(Model_Empleado::$columnsInfo[$campo.'_data'])) {
+            \sowerphp\core\Model_Datasource_Session::message(
+                'Campo '.$campo.' no exite', 'error'
+            );
+            $this->redirect(
+                $this->module_url.$this->request->params['controller'].'/listar'
+            );
+        }
+        // si el registro que se quiere descargar el campo no existe error
+        $Obj = new Model_Empleado($run);
+        if(!$Obj->exists()) {
+            \sowerphp\core\Model_Datasource_Session::message(
+                'Registro ('.$run.') no existe. No se puede obtener '.$campo,
+                'error'
+            );
+            $this->redirect(
+                $this->module_url.$this->request->params['controller'].'/listar'
+            );
+        }
+        // entregar archivo
+        if ($Obj->{$campo.'_size'}==0) {
+            $f = \sowerphp\core\App::location('Module/Rrhh/webroot/img/icons/100x100/empleado.png');
+            $this->response->sendFile($f);
+        } else {
+            $this->response->sendFile([
+                'name' => $Obj->{$campo.'_name'},
+                'type' => $Obj->{$campo.'_type'},
+                'size' => $Obj->{$campo.'_size'},
+                'data' => $Obj->{$campo.'_data'},
+            ]);
+        }
     }
 
 }

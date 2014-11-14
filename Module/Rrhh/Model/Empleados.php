@@ -57,10 +57,16 @@ class Model_Empleados extends \Model_Plural_App
      * Método que entrega un empleado a partir de su nombre de usuario
      * @return Model_Empleado o null si no se encontró
      * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
-     * @version 2014-10-21
+     * @version 2014-11-14
      */
     public function getByUser($user)
     {
+        if (is_string($user)) {
+            $Usuario = new \sowerphp\app\Sistema\Usuarios\Model_Usuario($user);
+            if (!$Usuario->exists())
+                return null;
+            $user = $Usuario->id;
+        }
         $this->setWhereStatement(['usuario = :usuario'], [':usuario'=>$user]);
         $empleados = $this->getObjects();
         return !empty($empleados) ? $empleados[0] : null;
