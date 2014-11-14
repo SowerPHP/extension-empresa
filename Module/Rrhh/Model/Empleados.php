@@ -66,4 +66,43 @@ class Model_Empleados extends \Model_Plural_App
         return !empty($empleados) ? $empleados[0] : null;
     }
 
+    /**
+     * Método que entrega el listado de cumpleaños futuros a partir de una fecha
+     * Se entrega una tabla con el día mes y año del próximo cumpleaños de la
+     * persona, si se solicitan más cumpleaños que los que faltan para que el
+     * año termine entonces se mostrarán cumpleaños del año siguiente.
+     * @param Desde que fecha mostrar los cumpleaños
+     * @param mostrar Cantiad de cumpleaños que se deben mostrar
+     * @return Tabla con el listado de cumpleaños
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
+     * @version 2014-11-14
+     */
+    public function cumpleanios($desde, $mostrar)
+    {
+        $aux = $this->db->getTable('
+            SELECT
+                CONCAT(nombres, \' \', apellidos) AS nombre,
+                fecha_nacimiento
+            FROM empleado
+            WHERE fecha_nacimiento is not null
+        ');
+        $cumpleanios = [];
+        $desdeAnio = substr($desde, 0, 4);
+        $desde = substr($desde, 5);
+        foreach ($aux as &$c) {
+            $fecha = substr($c['fecha_nacimiento'], 5);
+            if ($fecha >= $desde) {
+                $cumpleanio = $desdeAnio.'-'.$fecha;
+            } else {
+                $cumpleanio = ($desdeAnio+1).'-'.$fecha;
+            }
+            $cumpleanios[] = [
+                'cumpleanio' => $cumpleanio,
+                'nombre' => $c['nombre']
+            ];
+        }
+        array_multisort($cumpleanios);
+        return array_slice($cumpleanios, 0, $mostrar);
+    }
+
 }

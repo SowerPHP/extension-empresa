@@ -42,4 +42,29 @@ class Controller_Empleados extends \Controller_Maintainer
         'listar'=>['run', 'nombres', 'apellidos', 'cargo', 'activo']
     ]; ///< Columnas que se deben mostrar en las vistas
 
+    /**
+     * Método para permitir autorizar acciones
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]delaf.cl)
+     * @version 2014-11-14
+     */
+    public function beforeFilter()
+    {
+        $this->Auth->allowWithLogin('cumpleanios');
+        parent::beforeFilter();
+    }
+
+    /**
+     * Acción para mostrar los cumpleaños de los empleados
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]delaf.cl)
+     * @version 2014-11-14
+     */
+    public function cumpleanios($mostrar = 10, $desde = null)
+    {
+        if (!$desde) $desde = date('Y-m-d');
+        $this->set([
+            'desde' => $desde,
+            'cumpleanios' => (new Model_Empleados())->cumpleanios($desde, $mostrar)
+        ]);
+    }
+
 }
