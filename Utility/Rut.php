@@ -65,8 +65,8 @@ class Utility_Rut
 
     private static function normalizar_array($arreglo, $quitarDV = true)
     {
-        if (isset($arreglo[1]) and (!empty($arreglo[1])) or $arreglo[1]==='0') {
-            $arreglo[0] .= '-'.$arreglo[1];
+        if (isset($arreglo[1]) and (!empty($arreglo[1]) or $arreglo[1]==='0')) {
+            $arreglo[0] .= '-'.strtoupper($arreglo[1]);
         }
         if (!strpos($arreglo[0], '-')) {
             $arreglo[0] = substr($arreglo[0], 0, -1).'-'.substr($arreglo[0], -1);
@@ -80,7 +80,7 @@ class Utility_Rut
     {
         if (!isset($rut[0]))
             return '';
-        $rut = str_replace(['.', ','], '', $rut);
+        $rut = strtoupper(str_replace(['.', ','], '', $rut));
         if (strpos($rut, '-')) {
             if($quitarDV) {
                 $aux = explode('-', $rut);
