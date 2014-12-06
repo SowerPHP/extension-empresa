@@ -42,4 +42,23 @@ class Controller_Clientes extends \Controller_Maintainer
         'listar'=>['rut', 'razon_social', 'email', 'telefono']
     ]; ///< Columnas que se deben mostrar en las vistas
 
+    /**
+     * Función de la API que entrega los datos de un cliente
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]delaf.cl)
+     * @version 2014-12-06
+     */
+    public function _api_crud_GET($rut, $dv = null)
+    {
+        // revisar autorización
+        if (!$this->Auth->logged()) {
+            $this->Api->send('No está autorizado para acceder a la API', 401);
+        }
+        // crear cliente
+        $Cliente = new Model_Cliente($rut);
+        if (!$Cliente->exists()) {
+            $this->Api->send('Cliente no existe', 400);
+        }
+        return $Cliente;
+    }
+
 }
