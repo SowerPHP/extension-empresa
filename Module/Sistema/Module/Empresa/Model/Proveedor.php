@@ -148,4 +148,10 @@ class Model_Proveedor extends \Model_App
         'Model_Comuna' => 'sowerphp\empresa\Sistema\General\DivisionGeopolitica'
     ); ///< Namespaces que utiliza esta clase
 
+    public function __construct($rut = null)
+    {
+        parent::__construct($rut);
+        $this->proveedor = &$this->razon_social;
+    }
+
 }

@@ -38,4 +38,13 @@ class Model_Proveedores extends \Model_Plural_App
     protected $_database = 'default'; ///< Base de datos del modelo
     protected $_table = 'proveedor'; ///< Tabla del modelo
 
+    public function getList()
+    {
+        return $this->db->getTable('
+            SELECT rut, razon_social
+            FROM proveedor
+            ORDER BY razon_social
+        ');
+    }
+
 }
