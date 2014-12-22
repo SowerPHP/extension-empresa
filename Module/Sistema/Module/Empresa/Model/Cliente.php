@@ -146,7 +146,7 @@ class Model_Cliente extends \Model_App
 
     public static $fkNamespace = array(
         'Model_ActividadEconomica' => 'sowerphp\empresa\Sistema\General',
-        'Model_Comuna' => 'sowerphp\empresa\Sistema\General\DivisionGeopolitica'
+        'Model_Comuna' => 'sowerphp\app\Sistema\General\DivisionGeopolitica'
     ); ///< Namespaces que utiliza esta clase
 
 }

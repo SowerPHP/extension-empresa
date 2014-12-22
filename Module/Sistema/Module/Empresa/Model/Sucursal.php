@@ -193,7 +193,7 @@ class Model_Sucursal extends \Model_App
     public static $tableComment = 'Sucursales de la empresa';
 
     public static $fkNamespace = array(
-        'Model_Comuna' => 'sowerphp\empresa\Sistema\General\DivisionGeopolitica',
+        'Model_Comuna' => 'sowerphp\app\Sistema\General\DivisionGeopolitica',
         'Model_Empleado' => 'sowerphp\empresa\Rrhh'
     ); ///< Namespaces que utiliza esta clase
 

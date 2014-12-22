@@ -145,7 +145,7 @@ class Model_Proveedor extends \Model_App
     public static $tableComment = 'Listado de proveedores de la empresa';
 
     public static $fkNamespace = array(
-        'Model_Comuna' => 'sowerphp\empresa\Sistema\General\DivisionGeopolitica'
+        'Model_Comuna' => 'sowerphp\app\Sistema\General\DivisionGeopolitica'
     ); ///< Namespaces que utiliza esta clase
 
     public function __construct($rut = null)
