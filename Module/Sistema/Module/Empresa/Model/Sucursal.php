@@ -51,6 +51,7 @@ class Model_Sucursal extends \Model_App
     public $email; ///< Correo electrónico principal de la sucursal: varchar(50)(50) NULL DEFAULT ''
     public $contrasenia; ///< Contraseña del correo electrónico de la sucursal: varchar(20)(20) NULL DEFAULT ''
     public $encargado; ///< int(10) unsigned(10) NULL DEFAULT '' FK:empleado.run
+    public $orden; ///< Orden para mostrar la sucursal en listados: int(10) NOT NULL DEFAULT 9999
 
     // Información de las columnas de la tabla en la base de datos
     public static $columnsInfo = array(
@@ -186,7 +187,17 @@ class Model_Sucursal extends \Model_App
             'pk'        => false,
             'fk'        => array('table' => 'empleado', 'column' => 'run')
         ),
-
+        'orden' => array(
+            'name'      => 'Orden',
+            'comment'   => 'Orden para mostrar la sucursal en listados',
+            'type'      => 'int',
+            'length'    => 10,
+            'null'      => false,
+            'default'   => 9999,
+            'auto'      => false,
+            'pk'        => false,
+            'fk'        => null
+        ),
     );
 
     // Comentario de la tabla en la base de datos

@@ -24,6 +24,8 @@ CREATE TABLE sucursal (
 		COMMENT 'Correo electrónico principal de la sucursal',
 	contrasenia CHARACTER VARYING (20)
 		COMMENT 'Contraseña del correo electrónico de la sucursal',
+	orden INTEGER NOT NULL DEFAULT 9999
+		COMMENT 'Orden para mostrar la sucursal en listados',
 	CONSTRAINT sucursal_comuna_fk
 		FOREIGN KEY (comuna)
 		REFERENCES comuna (codigo) MATCH FULL

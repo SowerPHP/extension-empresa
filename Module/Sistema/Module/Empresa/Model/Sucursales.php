@@ -42,16 +42,14 @@ class Model_Sucursales extends \Model_Plural_App
      * Método que entrega el listado de sucursales
      * @return Tabla con las sucursales
      * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
-     * @version 2014-10-20
+     * @version 2015-02-19
      */
     public function getList()
     {
         return $this->db->getTable('
-            SELECT
-                id,
-                CONCAT(id, \': \', sucursal) AS sucursal
+            SELECT id, CONCAT(id, \': \', sucursal) AS sucursal
             FROM sucursal
-            ORDER BY matriz DESC, id ASC
+            ORDER BY orden
         ');
     }
 
@@ -59,7 +57,7 @@ class Model_Sucursales extends \Model_Plural_App
      * Método que entrega el listado de sucursales con su correo electrónico
      * @return Tabla con las sucursales y su correo electrónico
      * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
-     * @version 2014-10-21
+     * @version 2015-02-19
      */
     public function getListWithEmail()
     {
@@ -69,7 +67,7 @@ class Model_Sucursales extends \Model_Plural_App
                 CONCAT(id, \': \', sucursal, \' (\', email, \')\') AS sucursal
             FROM sucursal
             WHERE email IS NOT NULL
-            ORDER BY matriz DESC, id ASC
+            ORDER BY orden
         ');
     }
 

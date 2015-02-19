@@ -41,7 +41,7 @@ Configure::write('nav.module', array(
         'name' => 'Áreas',
         'imag' => '/sistema/empresa/img/icons/48x48/area.png',
     ),
-    '/sucursales/listar' => array(
+    '/sucursales/listar/1/orden/A' => array(
         'name' => 'Sucursales',
         'imag' => '/sistema/empresa/img/icons/48x48/sucursal.png',
     ),
