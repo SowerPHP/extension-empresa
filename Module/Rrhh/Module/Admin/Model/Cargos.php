@@ -21,18 +21,21 @@
  * En caso contrario, consulte <http://www.gnu.org/licenses/gpl.html>.
  */
 
-/**
- * @file core.php
- * Configuración de la extensión empresa
- * @version 2015-04-24
- */
+// namespace del modelo
+namespace sowerphp\empresa\Rrhh\Admin;
 
-// Módulos utilizados por la extensión
-Module::uses(array(
-    'Rrhh',
-    'Rrhh.Admin',
-    'Sistema.Empresa',
-    'Sistema.Enlaces' => ['autoLoad'=>true],
-    'Sistema.General',
-    'Sistema.General.DivisionGeopolitica',
-));
+/**
+ * Clase para mapear la tabla cargo de la base de datos
+ * Comentario de la tabla: Cargos de la empresa
+ * Esta clase permite trabajar sobre un conjunto de registros de la tabla cargo
+ * @author SowerPHP Code Generator
+ * @version 2014-10-19 20:49:00
+ */
+class Model_Cargos extends \Model_Plural_App
+{
+
+    // Datos para la conexión a la base de datos
+    protected $_database = 'default'; ///< Base de datos del modelo
+    protected $_table = 'cargo'; ///< Tabla del modelo
+
+}

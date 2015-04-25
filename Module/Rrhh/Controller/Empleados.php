@@ -31,7 +31,7 @@ namespace sowerphp\empresa\Rrhh;
  * Esta clase permite controlar las acciones entre el modelo y vista para la
  * tabla empleado
  * @author SowerPHP Code Generator
- * @version 2014-10-19 21:38:18
+ * @version 2015-04-24
  */
 class Controller_Empleados extends \Controller_Maintainer
 {
@@ -112,6 +112,60 @@ class Controller_Empleados extends \Controller_Maintainer
                 'data' => $Obj->{$campo.'_data'},
             ]);
         }
+    }
+
+    /**
+     * Acción que permite crear un nuevo empleado
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]delaf.cl)
+     * @version 2015-04-24
+     */
+    public function crear()
+    {
+        if (isset($_POST['submit']) and isset($_FILES['foto']) and !$_FILES['foto']['error']) {
+            \sowerphp\general\Utility_Image::resizeOnFile($_FILES['foto']['tmp_name'], 100, 100);
+        }
+        parent::crear();
+    }
+
+    /**
+     * Acción que permite editar un empleado
+     * @param run RUN del empleado que se desea editar
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]delaf.cl)
+     * @version 2015-04-24
+     */
+    public function editar($run)
+    {
+        if (isset($_POST['submit']) and isset($_FILES['foto']) and !$_FILES['foto']['error']) {
+            \sowerphp\general\Utility_Image::resizeOnFile($_FILES['foto']['tmp_name'], 100, 100);
+        }
+        parent::editar($run);
+    }
+
+    /**
+     * Acción que permite generar la credencial de un empleado
+     * @param run RUN del empleado que se desea generar su credencial
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]delaf.cl)
+     * @version 2015-04-24
+     */
+    public function credencial($run)
+    {
+        $Empleado = new Model_Empleado($run);
+        if (!$Empleado->exists()) {
+            \sowerphp\core\Model_Datasource_Session::message('Empleado solicitado no existe', 'error');
+            $this->redirect('/rrhh/empleados/listar');
+        }
+        $this->set('Empleado', $Empleado);
+    }
+
+    /**
+     * Acción que permite generar la ficha de un empleado
+     * @param run RUN del empleado que se desea generar su ficha
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]delaf.cl)
+     * @version 2015-04-24
+     */
+    public function ficha($run)
+    {
+        $this->credencial($run);
     }
 
 }

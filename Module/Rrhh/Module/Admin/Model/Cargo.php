@@ -22,7 +22,7 @@
  */
 
 // namespace del modelo
-namespace sowerphp\empresa\Sistema\Empresa;
+namespace sowerphp\empresa\Rrhh\Admin;
 
 /**
  * Clase para mapear la tabla cargo de la base de datos
@@ -97,7 +97,7 @@ class Model_Cargo extends \Model_App
     public static $tableComment = 'Cargos de la empresa';
 
     public static $fkNamespace = array(
-        'Model_Cargo' => 'sowerphp\empresa\Sistema\Empresa',
+        'Model_Cargo' => 'sowerphp\empresa\Rrhh\Admin',
         'Model_Area' => 'sowerphp\empresa\Sistema\Empresa'
     ); ///< Namespaces que utiliza esta clase
 

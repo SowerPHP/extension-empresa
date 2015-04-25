@@ -21,18 +21,21 @@
  * En caso contrario, consulte <http://www.gnu.org/licenses/gpl.html>.
  */
 
-/**
- * @file core.php
- * Configuración de la extensión empresa
- * @version 2015-04-24
- */
+// namespace del controlador
+namespace sowerphp\empresa\Rrhh\Admin;
 
-// Módulos utilizados por la extensión
-Module::uses(array(
-    'Rrhh',
-    'Rrhh.Admin',
-    'Sistema.Empresa',
-    'Sistema.Enlaces' => ['autoLoad'=>true],
-    'Sistema.General',
-    'Sistema.General.DivisionGeopolitica',
-));
+/**
+ * Clase para el controlador asociado a la tabla cargo de la base de
+ * datos
+ * Comentario de la tabla: Cargos de la empresa
+ * Esta clase permite controlar las acciones entre el modelo y vista para la
+ * tabla cargo
+ * @author SowerPHP Code Generator
+ * @version 2014-10-19 20:49:00
+ */
+class Controller_Cargos extends \Controller_Maintainer
+{
+
+    protected $namespace = __NAMESPACE__; ///< Namespace del controlador y modelos asociados
+
+}

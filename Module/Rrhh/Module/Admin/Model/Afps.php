@@ -21,18 +21,21 @@
  * En caso contrario, consulte <http://www.gnu.org/licenses/gpl.html>.
  */
 
-/**
- * @file core.php
- * Configuración de la extensión empresa
- * @version 2015-04-24
- */
+// namespace del modelo
+namespace sowerphp\empresa\Rrhh\Admin;
 
-// Módulos utilizados por la extensión
-Module::uses(array(
-    'Rrhh',
-    'Rrhh.Admin',
-    'Sistema.Empresa',
-    'Sistema.Enlaces' => ['autoLoad'=>true],
-    'Sistema.General',
-    'Sistema.General.DivisionGeopolitica',
-));
+/**
+ * Clase para mapear la tabla afp de la base de datos
+ * Comentario de la tabla: Listado de AFPs de Chile
+ * Esta clase permite trabajar sobre un conjunto de registros de la tabla afp
+ * @author SowerPHP Code Generator
+ * @version 2015-04-24 20:54:02
+ */
+class Model_Afps extends \Model_Plural_App
+{
+
+    // Datos para la conexión a la base de datos
+    protected $_database = 'default'; ///< Base de datos del modelo
+    protected $_table = 'afp'; ///< Tabla del modelo
+
+}

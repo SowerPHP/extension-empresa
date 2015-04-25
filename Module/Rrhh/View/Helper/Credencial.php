@@ -21,18 +21,40 @@
  * En caso contrario, consulte <http://www.gnu.org/licenses/gpl.html>.
  */
 
+namespace sowerphp\empresa\Rrhh;
+
 /**
- * @file core.php
- * Configuración de la extensión empresa
+ * Clase para generar credenciales en PDF
+ * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]delaf.cl)
  * @version 2015-04-24
  */
+class View_Helper_Credencial extends \sowerphp\general\View_Helper_PDF
+{
 
-// Módulos utilizados por la extensión
-Module::uses(array(
-    'Rrhh',
-    'Rrhh.Admin',
-    'Sistema.Empresa',
-    'Sistema.Enlaces' => ['autoLoad'=>true],
-    'Sistema.General',
-    'Sistema.General.DivisionGeopolitica',
-));
+    /**
+     * Constructor de la clase
+     * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]delaf.cl)
+     * @version 2015-04-25
+     */
+    public function __construct()
+    {
+        parent::__construct('L', 'mm', [48, 158]);
+        $this->setMargins(0,0,0);
+        $this->setPageOrientation('L', false, 0);
+    }
+
+    /**
+     * Método que sobreescribe la cabecera del PDF
+     */
+    public function Header()
+    {
+    }
+
+    /**
+     * Método que sobreescribe el pie de página del PDF
+     */
+    public function Footer()
+    {
+    }
+
+}

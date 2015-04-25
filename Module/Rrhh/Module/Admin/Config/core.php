@@ -21,21 +21,22 @@
  * En caso contrario, consulte <http://www.gnu.org/licenses/gpl.html>.
  */
 
-// namespace del modelo
-namespace sowerphp\empresa\Sistema\Empresa;
-
-/**
- * Clase para mapear la tabla cargo de la base de datos
- * Comentario de la tabla: Cargos de la empresa
- * Esta clase permite trabajar sobre un conjunto de registros de la tabla cargo
- * @author SowerPHP Code Generator
- * @version 2014-10-19 20:49:00
- */
-class Model_Cargos extends \Model_Plural_App
-{
-
-    // Datos para la conexión a la base de datos
-    protected $_database = 'default'; ///< Base de datos del modelo
-    protected $_table = 'cargo'; ///< Tabla del modelo
-
-}
+// Menú para el módulo
+Configure::write('nav.module', array(
+    '/cargos/listar' => array(
+        'name' => 'Cargos',
+        'imag' => '/rrhh/admin/img/icons/48x48/cargo.png',
+    ),
+    '/contrato_tipos/listar' => array(
+        'name' => 'Tipos de contratos',
+        'icon' => 'glyphicon glyphicon-list-alt',
+    ),
+    '/afps/listar' => array(
+        'name' => 'AFPs',
+        'icon' => 'glyphicon glyphicon-usd',
+    ),
+    '/saludes/listar' => array(
+        'name' => 'Previsiones de salud',
+        'icon' => 'glyphicon glyphicon-heart',
+    ),
+));

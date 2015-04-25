@@ -29,7 +29,7 @@ namespace sowerphp\empresa\Rrhh;
  * Comentario de la tabla: Listado de empleados de la empresa
  * Esta clase permite trabajar sobre un registro de la tabla empleado
  * @author SowerPHP Code Generator
- * @version 2014-10-19 21:38:18
+ * @version 2015-04-24 20:48:07
  */
 class Model_Empleado extends \Model_App
 {
@@ -39,27 +39,34 @@ class Model_Empleado extends \Model_App
     protected $_table = 'empleado'; ///< Tabla del modelo
 
     // Atributos de la clase (columnas en la base de datos)
-    public $run; ///< RUN de la persona, sin puntos ni dígito verificador: int(10) unsigned(10) NOT NULL DEFAULT '' PK
-    public $dv; ///< Dígito verificador del RUN: char(1)(1) NOT NULL DEFAULT ''
-    public $nombres; ///< Nombres de la persona: varchar(30)(30) NOT NULL DEFAULT ''
-    public $apellidos; ///< Apellidos de la persona: varchar(30)(30) NOT NULL DEFAULT ''
+    public $run; ///< RUN de la persona, sin puntos ni dígito verificador: int(10) NOT NULL DEFAULT '' PK
+    public $dv; ///< Dígito verificador del RUN: char(1) NOT NULL DEFAULT ''
+    public $sexo; ///< Sexo del empleado ("m" o "f"): char(1) NOT NULL DEFAULT 'm'
+    public $nombres; ///< Nombres de la persona: varchar(30) NOT NULL DEFAULT ''
+    public $apellidos; ///< Apellidos de la persona: varchar(30) NOT NULL DEFAULT ''
+    public $telefono; ///< Teléfono principal del empleado: varchar(20) NULL DEFAULT ''
     public $fecha_nacimiento; ///< Fecha de nacimiento de la persona: date() NULL DEFAULT ''
-    public $fecha_ingreso; ///< Fecha de ingreso a la empresa: date() NULL DEFAULT ''
-    public $sucursal; ///< Sucursal en la que trabaja este empleado: varchar(10)(10) NULL DEFAULT '' FK:sucursal.id
-    public $cargo; ///< Cargo que ocupa dentro de la empresa: int(10) unsigned(10) NULL DEFAULT '' FK:cargo.id
+    public $sueldo; ///< Sueldo bruto base del empleado: int(10) NULL DEFAULT ''
+    public $contrato_tipo; ///< Tipo de contrato: char(1) NULL DEFAULT '' FK:contrato_tipo.codigo
+    public $fecha_ingreso; ///< date() NULL DEFAULT ''
+    public $fecha_egreso; ///< Fecha de egreso de la empresa (ej: fin contrato): date() NULL DEFAULT ''
+    public $sucursal; ///< Sucursal en la que trabaja este empleado: varchar(10) NULL DEFAULT '' FK:sucursal.id
+    public $cargo; ///< Cargo que ocupa dentro de la empresa: int(10) NULL DEFAULT '' FK:cargo.id
     public $foto_data; ///< Fotografía de la persona: mediumblob(16777215) NULL DEFAULT ''
-    public $foto_name; ///< Nombre de la fotografía: varchar(100)(100) NULL DEFAULT ''
-    public $foto_type; ///< Mimetype de la fotografía: varchar(10)(10) NULL DEFAULT ''
-    public $foto_size; ///< Tamaño de la fotografía: int(11)(10) NULL DEFAULT ''
-    public $usuario; ///< Usuario del sistema (si es que tiene uno asignado): int(10) unsigned(10) NULL DEFAULT '' FK:usuario.id
-    public $activo; ///< Indica si la persona aun pertenece a la empresa: tinyint(1)(3) NOT NULL DEFAULT '1'
+    public $foto_name; ///< Nombre de la fotografía: varchar(100) NULL DEFAULT ''
+    public $foto_type; ///< Mimetype de la fotografía: varchar(10) NULL DEFAULT ''
+    public $foto_size; ///< Tamaño de la fotografía: int(10) NULL DEFAULT ''
+    public $usuario; ///< Usuario del sistema (si es que tiene uno asignado): int(10) NULL DEFAULT '' FK:usuario.id
+    public $activo; ///< Indica si la persona aun pertenece a la empresa: tinyint(3) NOT NULL DEFAULT '1'
+    public $afp; ///< AFP del empleado: smallint(5) NULL DEFAULT '' FK:afp.codigo
+    public $salud; ///< Tipo de salud del empleado (Fonasa o Isapre): smallint(5) NULL DEFAULT '' FK:salud.codigo
 
     // Información de las columnas de la tabla en la base de datos
     public static $columnsInfo = array(
         'run' => array(
-            'name'      => 'RUN',
+            'name'      => 'Run',
             'comment'   => 'RUN de la persona, sin puntos ni dígito verificador',
-            'type'      => 'int unsigned',
+            'type'      => 'int',
             'length'    => 10,
             'null'      => false,
             'default'   => '',
@@ -68,12 +75,23 @@ class Model_Empleado extends \Model_App
             'fk'        => null
         ),
         'dv' => array(
-            'name'      => 'DV',
+            'name'      => 'Dv',
             'comment'   => 'Dígito verificador del RUN',
             'type'      => 'char',
             'length'    => 1,
             'null'      => false,
             'default'   => '',
+            'auto'      => false,
+            'pk'        => false,
+            'fk'        => null
+        ),
+        'sexo' => array(
+            'name'      => 'Sexo',
+            'comment'   => 'Sexo del empleado ("m" o "f")',
+            'type'      => 'char',
+            'length'    => 1,
+            'null'      => false,
+            'default'   => 'm',
             'auto'      => false,
             'pk'        => false,
             'fk'        => null
@@ -100,6 +118,17 @@ class Model_Empleado extends \Model_App
             'pk'        => false,
             'fk'        => null
         ),
+        'telefono' => array(
+            'name'      => 'Telefono',
+            'comment'   => 'Teléfono principal del empleado',
+            'type'      => 'varchar',
+            'length'    => 20,
+            'null'      => true,
+            'default'   => '',
+            'auto'      => false,
+            'pk'        => false,
+            'fk'        => null
+        ),
         'fecha_nacimiento' => array(
             'name'      => 'Fecha Nacimiento',
             'comment'   => 'Fecha de nacimiento de la persona',
@@ -111,9 +140,42 @@ class Model_Empleado extends \Model_App
             'pk'        => false,
             'fk'        => null
         ),
+        'sueldo' => array(
+            'name'      => 'Sueldo',
+            'comment'   => 'Sueldo bruto base del empleado',
+            'type'      => 'int',
+            'length'    => 10,
+            'null'      => true,
+            'default'   => '',
+            'auto'      => false,
+            'pk'        => false,
+            'fk'        => null
+        ),
+        'contrato_tipo' => array(
+            'name'      => 'Contrato Tipo',
+            'comment'   => 'Tipo de contrato',
+            'type'      => 'char',
+            'length'    => 1,
+            'null'      => true,
+            'default'   => '',
+            'auto'      => false,
+            'pk'        => false,
+            'fk'        => array('table' => 'contrato_tipo', 'column' => 'codigo')
+        ),
         'fecha_ingreso' => array(
             'name'      => 'Fecha Ingreso',
-            'comment'   => 'Fecha de ingreso a la empresa',
+            'comment'   => '',
+            'type'      => 'date',
+            'length'    => null,
+            'null'      => true,
+            'default'   => '',
+            'auto'      => false,
+            'pk'        => false,
+            'fk'        => null
+        ),
+        'fecha_egreso' => array(
+            'name'      => 'Fecha Egreso',
+            'comment'   => 'Fecha de egreso de la empresa (ej: fin contrato)',
             'type'      => 'date',
             'length'    => null,
             'null'      => true,
@@ -136,7 +198,7 @@ class Model_Empleado extends \Model_App
         'cargo' => array(
             'name'      => 'Cargo',
             'comment'   => 'Cargo que ocupa dentro de la empresa',
-            'type'      => 'int unsigned',
+            'type'      => 'int',
             'length'    => 10,
             'null'      => true,
             'default'   => '',
@@ -156,8 +218,8 @@ class Model_Empleado extends \Model_App
             'fk'        => null
         ),
         'foto_name' => array(
-            'name'      => 'Fotografía',
-            'comment'   => 'Fotografía del empleado',
+            'name'      => 'Foto Name',
+            'comment'   => 'Nombre de la fotografía',
             'type'      => 'varchar',
             'length'    => 100,
             'null'      => true,
@@ -191,7 +253,7 @@ class Model_Empleado extends \Model_App
         'usuario' => array(
             'name'      => 'Usuario',
             'comment'   => 'Usuario del sistema (si es que tiene uno asignado)',
-            'type'      => 'int unsigned',
+            'type'      => 'int',
             'length'    => 10,
             'null'      => true,
             'default'   => '',
@@ -210,6 +272,28 @@ class Model_Empleado extends \Model_App
             'pk'        => false,
             'fk'        => null
         ),
+        'afp' => array(
+            'name'      => 'Afp',
+            'comment'   => 'AFP del empleado',
+            'type'      => 'smallint',
+            'length'    => 5,
+            'null'      => true,
+            'default'   => '',
+            'auto'      => false,
+            'pk'        => false,
+            'fk'        => array('table' => 'afp', 'column' => 'codigo')
+        ),
+        'salud' => array(
+            'name'      => 'Salud',
+            'comment'   => 'Tipo de salud del empleado (Fonasa o Isapre)',
+            'type'      => 'smallint',
+            'length'    => 5,
+            'null'      => true,
+            'default'   => '',
+            'auto'      => false,
+            'pk'        => false,
+            'fk'        => array('table' => 'salud', 'column' => 'codigo')
+        ),
 
     );
 
@@ -217,9 +301,12 @@ class Model_Empleado extends \Model_App
     public static $tableComment = 'Listado de empleados de la empresa';
 
     public static $fkNamespace = array(
+        'Model_ContratoTipo' => 'sowerphp\empresa\Rrhh\Admin',
         'Model_Sucursal' => 'sowerphp\empresa\Sistema\Empresa',
-        'Model_Cargo' => 'sowerphp\empresa\Sistema\Empresa',
-        'Model_Usuario' => 'sowerphp\app\Sistema\Usuarios'
+        'Model_Cargo' => 'sowerphp\empresa\Rrhh\Admin',
+        'Model_Usuario' => 'sowerphp\app\Sistema\Usuarios',
+        'Model_Afp' => 'sowerphp\empresa\Rrhh\Admin',
+        'Model_Salud' => 'sowerphp\empresa\Rrhh\Admin'
     ); ///< Namespaces que utiliza esta clase
 
 }

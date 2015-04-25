@@ -22,18 +22,18 @@
  */
 
 // namespace del controlador
-namespace sowerphp\empresa\Sistema\Empresa;
+namespace sowerphp\empresa\Rrhh\Admin;
 
 /**
- * Clase para el controlador asociado a la tabla cargo de la base de
+ * Clase para el controlador asociado a la tabla afp de la base de
  * datos
- * Comentario de la tabla: Cargos de la empresa
+ * Comentario de la tabla: Listado de AFPs de Chile
  * Esta clase permite controlar las acciones entre el modelo y vista para la
- * tabla cargo
+ * tabla afp
  * @author SowerPHP Code Generator
- * @version 2014-10-19 20:49:00
+ * @version 2015-04-24 20:54:02
  */
-class Controller_Cargos extends \Controller_Maintainer
+class Controller_Afps extends \Controller_Maintainer
 {
 
     protected $namespace = __NAMESPACE__; ///< Namespace del controlador y modelos asociados

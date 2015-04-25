@@ -27,12 +27,12 @@ Configure::write('nav.module', array(
         'name' => 'Empleados',
         'imag' => '/rrhh/img/icons/48x48/empleados.png',
     ),
-    '/empleados/edad' => array(
-        'name' => 'Grupo etáreo',
-        'imag' => '/rrhh/img/icons/48x48/edad.png',
-    ),
     '/empleados/cumpleanios' => array(
         'name' => 'Cumpleaños',
         'imag' => '/rrhh/img/icons/48x48/cumpleanios.png',
+    ),
+    '/admin' => array(
+        'name' => 'Administración',
+        'imag' => '/sistema/general/img/icons/48x48/configuracion.png',
     ),
 ));

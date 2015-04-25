@@ -33,10 +33,6 @@ Configure::write('nav.module', array(
         'desc' => 'Mantenedor de proveedores',
         'imag' => '/sistema/empresa/img/icons/48x48/proveedor.png',
     ),
-    '/cargos/listar' => array(
-        'name' => 'Cargos',
-        'imag' => '/sistema/empresa/img/icons/48x48/cargo.png',
-    ),
     '/areas/listar' => array(
         'name' => 'Áreas',
         'imag' => '/sistema/empresa/img/icons/48x48/area.png',
