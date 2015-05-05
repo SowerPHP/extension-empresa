@@ -47,7 +47,7 @@ $pdf->Texto($Empleado->telefono, 55);
 $pdf->Ln();
 $pdf->Texto('Edad', 0);
 $pdf->Texto(':', 52);
-$pdf->Texto(\sowerphp\general\Utility_Date::edad($Empleado->fecha_nacimiento).' años ('.$Empleado->fecha_nacimiento.')', 55);
+$pdf->Texto(\sowerphp\general\Utility_Date::age($Empleado->fecha_nacimiento).' años ('.$Empleado->fecha_nacimiento.')', 55);
 $pdf->Ln();
 $pdf->Ln();
 
