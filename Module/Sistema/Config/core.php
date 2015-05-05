@@ -43,4 +43,9 @@ Configure::write('nav.module', array(
         'desc' => 'Módulo de configuraciones generales',
         'imag' => '/sistema/general/img/icons/48x48/configuracion.png',
     ),
+    '/logs' => array(
+        'name' => 'Logs',
+        'desc' => 'Eventos registrados por el sistema',
+        'imag' => '/sistema/logs/img/icons/48x48/logs.png',
+    ),
 ));
