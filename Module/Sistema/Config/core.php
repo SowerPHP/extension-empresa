@@ -26,26 +26,26 @@ Configure::write('nav.module', array(
     '/empresa' => array(
         'name' => 'Empresa',
         'desc' => 'Configuración y parámetros de la empresa',
-        'imag' => '/sistema/empresa/img/icons/48x48/empresa.png',
+        'icon' => 'fa fa-building',
     ),
     '/usuarios' => array(
         'name' => 'Usuarios',
         'desc' => 'Mantenedor de usuarios y grupos del sistema',
-        'imag' => '/sistema/usuarios/img/icons/48x48/grupo.png',
+        'icon' => 'fa fa-users',
     ),
     '/enlaces' => array(
         'name' => 'Enlaces',
         'desc' => 'Mantenedor de enlaces del sistema',
-        'imag' => '/sistema/enlaces/img/icons/48x48/enlaces.png',
+        'icon' => 'fa fa-link',
     ),
     '/general' => array(
         'name' => 'Configuración general',
         'desc' => 'Módulo de configuraciones generales',
-        'imag' => '/sistema/general/img/icons/48x48/configuracion.png',
+        'icon' => 'fa fa-cogs',
     ),
     '/logs' => array(
         'name' => 'Logs',
         'desc' => 'Eventos registrados por el sistema',
-        'imag' => '/sistema/logs/img/icons/48x48/logs.png',
+        'icon' => 'fa fa-history',
     ),
 ));
