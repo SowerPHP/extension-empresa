@@ -54,7 +54,7 @@ echo $form->input(['type'=>'date', 'name'=>'fecha_ingreso', 'label'=>'Fecha de i
 echo $form->input(['type'=>'date', 'name'=>'fecha_egreso', 'label'=>'Fecha de egreso', 'value'=>isset($Obj)?$Obj->fecha_egreso:'', 'check'=>'date', 'help'=>$columns['fecha_egreso']['comment']]);
 echo $form->input(['type'=>'select', 'name'=>'sucursal', 'label'=>'Sucursal', 'options'=>$sucursales, 'value'=>isset($Obj)?$Obj->sucursal:'', 'help'=>$columns['sucursal']['comment']]);
 echo $form->input(['type'=>'select', 'name'=>'cargo', 'label'=>'Cargo', 'options'=>$cargos, 'value'=>isset($Obj)?$Obj->cargo:'', 'help'=>$columns['cargo']['comment']]);
-if ($Obj->usuario and !$Obj->getUsuario()->activo) {
+if (isset($Obj) and $Obj->usuario and !$Obj->getUsuario()->activo) {
     array_unshift($usuarios, [$Obj->usuario, $Obj->getUsuario()->usuario.' - '.$Obj->getUsuario()->nombre.' (usuario inactivo)']);
 }
 echo $form->input(['type'=>'select', 'name'=>'usuario', 'label'=>'Usuario', 'options'=>$usuarios, 'value'=>isset($Obj)?$Obj->usuario:'', 'help'=>$columns['usuario']['comment']]);
