@@ -8,7 +8,7 @@ CREATE TABLE afp (
     afp VARCHAR(20) NOT NULL,
     web VARCHAR(30) NOT NULL,
     descuento REAL NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT 'Listado de AFPs de Chile';
+) ENGINE=InnoDB COMMENT 'Listado de AFPs de Chile';
 
 -- http://www.spensiones.cl/compendio/584/w3-propertyvalue-3000.html
 INSERT INTO afp VALUES

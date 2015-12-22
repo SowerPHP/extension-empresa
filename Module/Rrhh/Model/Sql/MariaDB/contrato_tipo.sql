@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS contrato_tipo CASCADE;
 CREATE TABLE contrato_tipo (
     codigo CHAR(1) PRIMARY KEY,
     tipo VARCHAR(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT 'Tipos de contratos';
+) ENGINE=InnoDB COMMENT 'Tipos de contratos';
 
 INSERT INTO contrato_tipo VALUES
     ('h', 'Contrato a honorarios'),

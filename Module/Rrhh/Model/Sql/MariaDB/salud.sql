@@ -8,7 +8,7 @@ CREATE TABLE salud (
     salud VARCHAR(20) NOT NULL,
     web VARCHAR(30) NOT NULL,
     telefono VARCHAR(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT 'Tipos de previsión de salud';
+) ENGINE=InnoDB COMMENT 'Tipos de previsión de salud';
 
 -- http://www.supersalud.gob.cl/568/w3-article-2528.html
 INSERT INTO salud VALUES
