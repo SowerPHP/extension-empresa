@@ -21,7 +21,6 @@
         "vendor-dir": "Vendor"
     },
     "require": {
-        "php": "~5.5",
-        "sasco/libredte": "dev-master"
+        "php": "~5.5"
     }
 }
