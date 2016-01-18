@@ -26,23 +26,23 @@ Configure::write('nav.module', array(
     '/clientes/listar' => array(
         'name' => 'Clientes',
         'desc' => 'Mantenedor de clientes',
-        'imag' => '/sistema/empresa/img/icons/48x48/cliente.png',
+        'icon' => 'fa fa-users',
     ),
     '/proveedores/listar' => array(
         'name' => 'Proveedores',
         'desc' => 'Mantenedor de proveedores',
-        'imag' => '/sistema/empresa/img/icons/48x48/proveedor.png',
+        'icon' => 'fa fa-truck',
     ),
     '/areas/listar' => array(
         'name' => 'Áreas',
-        'imag' => '/sistema/empresa/img/icons/48x48/area.png',
+        'icon' => 'fa fa-list-alt',
     ),
     '/sucursales/listar/1/orden/A' => array(
         'name' => 'Sucursales',
-        'imag' => '/sistema/empresa/img/icons/48x48/sucursal.png',
+        'icon' => 'fa fa-building',
     ),
     '/cuenta_corrientes/listar?search=activa:1' => array(
         'name' => 'Cuentas corrientes',
-        'imag' => '/sistema/empresa/img/icons/48x48/cuenta_corriente.png',
+        'icon' => 'fa fa-dollar',
     ),
 ));

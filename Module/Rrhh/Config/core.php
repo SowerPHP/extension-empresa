@@ -25,14 +25,14 @@
 Configure::write('nav.module', array(
     '/empleados/listar?search=activo:1' => array(
         'name' => 'Empleados',
-        'imag' => '/rrhh/img/icons/48x48/empleados.png',
+        'icon' => 'fa fa-users',
     ),
     '/empleados/cumpleanios' => array(
         'name' => 'Cumpleaños',
-        'imag' => '/rrhh/img/icons/48x48/cumpleanios.png',
+        'icon' => 'fa fa-birthday-cake',
     ),
     '/admin' => array(
         'name' => 'Administración',
-        'imag' => '/sistema/general/img/icons/48x48/configuracion.png',
+        'icon' => 'fa fa-cogs',
     ),
 ));

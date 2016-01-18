@@ -26,21 +26,21 @@ Configure::write('nav.module', array(
     '/feriados/listar/1/fecha/D' => array(
         'name' => 'Feriados',
         'desc' => 'Feriados o días que no se trabaja por cualquier motivo',
-        'imag' => '/sistema/general/img/icons/48x48/feriado.png',
+        'icon' => 'fa fa-calendar',
     ),
     '/actividad_economicas/listar' => array(
         'name' => 'Actividad económica',
         'desc' => 'Listado de actividades económicas del SII',
-        'imag' => '/sistema/general/img/icons/48x48/actividad_economica.png',
+        'icon' => 'fa fa-briefcase',
     ),
     '/bancos/listar' => array(
         'name' => 'Bancos',
         'desc' => 'Listado de bancos de Chile',
-        'imag' => '/sistema/general/img/icons/48x48/banco.png',
+        'icon' => 'fa fa-bank',
     ),
     '/division_geopolitica' => array(
         'name' => 'División geopolítica',
         'desc' => 'Regiones, provincias y comunas del país',
-        'imag' => '/sistema/general/division_geopolitica/img/icons/48x48/region.png',
+        'icon' => 'fa fa-globe',
     ),
 ));

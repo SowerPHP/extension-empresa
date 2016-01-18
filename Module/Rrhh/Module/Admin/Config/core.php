@@ -25,7 +25,7 @@
 Configure::write('nav.module', array(
     '/cargos/listar' => array(
         'name' => 'Cargos',
-        'imag' => '/rrhh/admin/img/icons/48x48/cargo.png',
+        'icon' => 'fa fa-puzzle-piece',
     ),
     '/contrato_tipos/listar' => array(
         'name' => 'Tipos de contratos',
