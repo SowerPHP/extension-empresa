@@ -41,7 +41,6 @@ $pdf->SetFont('helvetica', 'B', 8);
 $pdf->Texto($_url, 2, 0, 'R', 76);
 
 // colocar código de barras
-App::import('Vendor/tecnick.com/tcpdf/tcpdf_barcodes_1d');
 $barcodeobj = new TCPDFBarcode($Empleado->run, 'C128');
 $pdf->Image('@'.$barcodeobj->getBarcodePNGData(), 89, 10, 59, 20);
 
