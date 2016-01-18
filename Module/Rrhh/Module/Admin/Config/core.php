@@ -29,14 +29,14 @@ Configure::write('nav.module', array(
     ),
     '/contrato_tipos/listar' => array(
         'name' => 'Tipos de contratos',
-        'icon' => 'glyphicon glyphicon-list-alt',
+        'icon' => 'fa fa-list-alt',
     ),
     '/afps/listar' => array(
         'name' => 'AFPs',
-        'icon' => 'glyphicon glyphicon-usd',
+        'icon' => 'fa fa-dollar',
     ),
     '/saludes/listar' => array(
         'name' => 'Previsiones de salud',
-        'icon' => 'glyphicon glyphicon-heart',
+        'icon' => 'fa fa-heart',
     ),
 ));
