@@ -33,7 +33,7 @@ Configure::write('nav.module', array(
     ),
     '/afps/listar' => array(
         'name' => 'AFPs',
-        'icon' => 'fa fa-dollar',
+        'icon' => 'fas fa-dollar-sign',
     ),
     '/saludes/listar' => array(
         'name' => 'Previsiones de salud',

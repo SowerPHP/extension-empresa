@@ -26,7 +26,7 @@ Configure::write('nav.module', array(
     '/feriados/listar/1/fecha/D' => array(
         'name' => 'Feriados',
         'desc' => 'Feriados o días que no se trabaja por cualquier motivo',
-        'icon' => 'fa fa-calendar',
+        'icon' => 'fas fa-calendar-alt',
     ),
     '/actividad_economicas/listar' => array(
         'name' => 'Actividad económica',
@@ -36,7 +36,7 @@ Configure::write('nav.module', array(
     '/bancos/listar' => array(
         'name' => 'Bancos',
         'desc' => 'Listado de bancos de Chile',
-        'icon' => 'fa fa-bank',
+        'icon' => 'fas fa-university',
     ),
     '/division_geopolitica' => array(
         'name' => 'División geopolítica',

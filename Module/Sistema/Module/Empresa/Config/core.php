@@ -43,6 +43,6 @@ Configure::write('nav.module', array(
     ),
     '/cuenta_corrientes/listar?search=activa:1' => array(
         'name' => 'Cuentas corrientes',
-        'icon' => 'fa fa-dollar',
+        'icon' => 'fas fa-dollar-sign',
     ),
 ));
