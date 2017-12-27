@@ -1,0 +1,9 @@
+BEGIN;
+
+DROP TABLE IF EXISTS banco CASCADE;
+CREATE TABLE banco (
+    codigo CHAR(3) PRIMARY KEY,
+    banco VARCHAR (40) NOT NULL
+);
+
+COMMIT;
