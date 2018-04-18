@@ -1,4 +1,4 @@
-<h1>Próximos cumpleaños</h1>
+<div class="page-header"><h1>Próximos cumpleaños</h1></div>
 <?php
 $hoy = date('Y-m-d');
 foreach ($cumpleanios as &$c) {
