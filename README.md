@@ -1,9 +1,6 @@
 SowerPHP: extensión empresa (Chile)
 ===================================
 
-[![Dependency Status](https://www.versioneye.com/user/projects/56b439c60a0ff5003b9750ab/badge.svg)](https://www.versioneye.com/user/projects/56b439c60a0ff5003b9750ab)
-[![License](https://poser.pugx.org/sowerphp/empresa/license)](https://packagist.org/packages/sowerphp/empresa)
-
 **Módulo obsoleto**: existe sólo por compatibilidad con aplicaciones antiguas
 que lo usan. No debiese ser usado en la actualidad.
 
